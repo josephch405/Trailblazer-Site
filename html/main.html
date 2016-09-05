@@ -1,0 +1,59 @@
+<html>
+
+<head>
+</head>
+
+<body>
+<div id = "loading_cover"></div>
+
+    <canvas id="bgCanvas">
+    </canvas>
+    
+
+    <div class="hidden_fade fade" id="greypage">
+    </div>
+
+    <div class="hidden_top" id="cup_sub_page">
+
+    </div>
+
+    <div class="hidden_top" id="settings_sub_page">
+    </div>
+
+    <div class="hidden_top" id="cat_sub_page">
+    </div>
+
+    <div id="bar_top">
+    </div>
+
+    <div id="cup_main_page">
+    </div>
+    
+    <div id="bar_left" class="bar slide slideRight">
+        <h2>
+            Tasks</h2>
+        <img src='..\img\tasks.png' style='position:absolute;top:0; right:0; width:9%; margin:.5%'>
+        <div id='taskList'>
+        </div>
+    </div>
+
+    <div id="bar_bottom" class="bar slide slideUp" title = "Advance!">
+        <img id="reset_btn" src="..\img\icon.png">
+    </div>
+
+    <div id="bar_right" class="bar slide slideLeft">
+        <h2>
+            Notebook</h2>
+        <img src='..\img\notebook.png' style='position:absolute;top:0; left:0; width:9%; margin:.5%'>
+        <textarea tabindex="-1" maxlength="2000" id="nbarea" spellcheck="false"></textarea>
+    </div>
+
+    <a id="settings">Settings</a>
+    <a id="tutorial">Help</a>
+</body>
+<script src="..\js\params.js"></script>
+<script src="..\js\bundle.js"></script>
+<link rel="stylesheet" href="..\css\jquery-ui.css">
+<link rel="stylesheet" href="..\css\main.css">
+
+</html>
