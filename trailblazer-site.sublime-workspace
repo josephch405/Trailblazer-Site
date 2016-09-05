@@ -1,0 +1,1598 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"crea",
+				"createClass"
+			],
+			[
+				"initia",
+				"getInitialState"
+			],
+			[
+				"arra",
+				"arrayD"
+			],
+			[
+				"cre",
+				"createClass"
+			],
+			[
+				"STA",
+				"STATUS.categ	(main.js)"
+			],
+			[
+				"backgor",
+				"background-color"
+			],
+			[
+				"_pare",
+				"_parentId"
+			],
+			[
+				"curre",
+				"currentId"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"push",
+				"pushCategToBoard"
+			],
+			[
+				"set",
+				"set_onclicks"
+			],
+			[
+				"import",
+				"import_card"
+			],
+			[
+				"tick",
+				"tickedToColor"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"strafePid",
+				"strafePid_used"
+			],
+			[
+				"straf",
+				"strafePid"
+			],
+			[
+				"sleepT",
+				"sleepTimerFull"
+			],
+			[
+				"drawF",
+				"drawFlat"
+			],
+			[
+				"bli",
+				"blinkTimerFull"
+			],
+			[
+				"coord",
+				"coordXPos"
+			],
+			[
+				"coor",
+				"coordYPos"
+			],
+			[
+				"body",
+				"bodycontainer"
+			],
+			[
+				"strip",
+				"stripeVelocity"
+			],
+			[
+				"background",
+				"backgroundColor"
+			],
+			[
+				"append",
+				"appendAndAttach"
+			],
+			[
+				"onmou",
+				"onmouseout"
+			],
+			[
+				"bro",
+				"browserAction"
+			],
+			[
+				"ou",
+				"outString"
+			],
+			[
+				"input",
+				"inputArray"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"main",
+				"mainIndex"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"create",
+				"createButton"
+			],
+			[
+				"dayOfWe",
+				"dayOfWeek-1"
+			],
+			[
+				"delete",
+				"deleteButton"
+			],
+			[
+				"goo",
+				"goodTasks"
+			],
+			[
+				"task",
+				"taskArray"
+			],
+			[
+				"calcula",
+				"calculateKarma"
+			],
+			[
+				"max",
+				"maxArchiveId"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"cal",
+				"calculateTaskPercentage"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"arch",
+				"archTaskRow"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "html/main.html",
+			"settings":
+			{
+				"buffer_size": 1722,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "sass/main.scss",
+			"settings":
+			{
+				"buffer_size": 10283,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/params.js",
+			"settings":
+			{
+				"buffer_size": 1491,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 5075,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "package.json",
+			"settings":
+			{
+				"buffer_size": 866,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/notebook.js",
+			"settings":
+			{
+				"buffer_size": 226,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/save.js",
+			"settings":
+			{
+				"buffer_size": 613,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/tree.js",
+			"settings":
+			{
+				"buffer_size": 20829,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Processing/Build Systems/Processing.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					""
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Re-run sketch"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch (Processing 3 only)"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Run sketch fullscreen"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Export sketch as application"
+				],
+				[
+					"Packages/Processing/Build Systems/Processing.sublime-build",
+					"Kill running sketches"
+				]
+			],
+			[
+				"Packages/Processing/Build Systems/Processing.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 588.0,
+		"last_filter": "package",
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: up",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"npm",
+				"npm: Install Package"
+			],
+			[
+				"view",
+				"View In Browser"
+			],
+			[
+				"browser",
+				"File: Open In Browser - Testing Server"
+			],
+			[
+				"add",
+				"Package Control: Add Repository"
+			],
+			[
+				"robo",
+				"Set Syntax: RobotC"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"reomve",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 588.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/josep/Github/Traillazer Site",
+		"/C/Users/josep/Github/Traillazer Site/html",
+		"/C/Users/josep/Github/Traillazer Site/js",
+		"/C/Users/josep/Github/Traillazer Site/sass"
+	],
+	"file_history":
+	[
+		"/C/Users/josep/Github/Traillazer Site/package.json",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/js/tree.js",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/sass/main.scss",
+		"/C/Users/josep/Github/ramme/package.json",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/html/main.html",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/js/main.js",
+		"/C/Users/josep/Google Drive/Code/Trailblazer Site/package.json",
+		"/C/Users/josep/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/html/tutorial.html",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/css/tutorial.css",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/.gitignore",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/manifest.json",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/js/params.js",
+		"/C/Users/josep/Google Drive/Code/Trailblazer/js/settings.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/html/main.html",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/task.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/sass/main.scss",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/tree.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/settings.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/main.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/bgCanvas.js",
+		"/C/Users/Joseph Chuang/Desktop/bgTest/bgc.js",
+		"/C/Users/Joseph Chuang/Desktop/Swiper demo.html",
+		"/C/Users/Joseph Chuang/Desktop/Swiper demo_files/swiper.min.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/params.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/base.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/background.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/css/main.css",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/save.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/notebook.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/bundle.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/manifest.json",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/js/bgCanvas",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/scrum",
+		"/C/Users/Joseph Chuang/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/Joseph Chuang/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Habivator/js/main.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Habivator/js/background.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Habivator/js/settings.js",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Habivator/js/options.js",
+		"/C/Users/Joseph Chuang/AppData/Local/Google/Chrome/User Data/Default/Extensions/bgedjdgagndeglpacdndipmhhgboeehl/0.4.1_0/manifest.json",
+		"/C/Users/Joseph Chuang/AppData/Roaming/Sublime Text 3/Packages/ColorPicker/ColorPicker.sublime-settings",
+		"/C/Users/Joseph Chuang/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/sass/_fonts.scss",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/html/tutorial.html",
+		"/C/Users/Joseph Chuang/Google Drive/Code/Trailblazer/trailblazer.sublime-project",
+		"/C/Users/Joseph Chuang/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator/Desktop/battery-report.html",
+		"/C/Windows/System32/battery-report.html",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/site/package.json",
+		"/C/Users/Administrator/Desktop/html5-boilerplate_v5.3.0/404.html",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/html/tutorial.html",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/background.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/css/main.css",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/css/tutorial.css",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/sass/main.scss",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/sass/_fonts.scss",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/scrum",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/html/main.html",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/tree.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/notebook.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/css/jquery-ui.css",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/params.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/main.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/manifest.json",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/base.js",
+		"/C/Users/Administrator/Google Drive/Code/cityTravel/openThis.html",
+		"/C/Users/Administrator/Desktop/LunarLander/index.html",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/production/manifest.json",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/bundle.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/save.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/node_modules/lodash/package.json",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/_require.js",
+		"/C/Users/Administrator/Desktop/npmSandbox/bundle.js",
+		"/C/Users/Administrator/Desktop/npmSandbox/main.html",
+		"/C/Users/Administrator/Desktop/react-tutorial-master/server.js",
+		"/C/Users/Administrator/Desktop/react-tutorial-master/public/index.html",
+		"/C/Users/Administrator/Desktop/react-tutorial-master/README.md",
+		"/C/Users/Administrator/Desktop/Pathfinder/Pathfinder-Java/src/main/java/jaci/pathfinder/followers/DistanceFollower.java",
+		"/C/Users/Administrator/Desktop/Pathfinder/Pathfinder-Java/src/main/java/jaci/pathfinder/modifiers/TankModifier.java",
+		"/C/Users/Administrator/Desktop/Pathfinder/Pathfinder-Java/src/main/java/jaci/pathfinder/Waypoint.java",
+		"/C/Users/Administrator/Desktop/Pathfinder/Pathfinder-Java/src/main/java/jaci/pathfinder/Trajectory.java",
+		"/C/Users/Administrator/Desktop/Pathfinder/Pathfinder-Java/src/main/java/jaci/pathfinder/PathfinderJNI.java",
+		"/C/Users/Administrator/Desktop/Pathfinder/Pathfinder-Java/src/main/java/jaci/pathfinder/Pathfinder.java",
+		"/C/Users/Administrator/Google Drive/Code/Habivator/js/popup.js",
+		"/C/Users/Administrator/Google Drive/Code/Habivator/js/task.js",
+		"/C/Users/Administrator/AppData/Local/Google/Chrome/User Data/Default/Extensions/ndchmakhfaakbkhnkdgambadneloplnn/1.0.4_0/manifest.json",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/lodash.core.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/altMain.js",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/roadmap.txt",
+		"/C/Users/Administrator/Desktop/2016 Competition Bot/src/org/usfirst/frc/team4253/robot/Robot.java",
+		"/C/Users/Administrator/Desktop/2016 Competition Bot/src/org/usfirst/frc/team4253/robot/PIDHandler.java",
+		"/C/Users/Administrator/workspace/FRC 2016 4253/src/org/usfirst/frc/team4253/robot/Robot.java",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/css/hover-min.css",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/css/hover.css",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/node_modules/hover.css/index.html",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/js/temp.js",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/AlignTab/AlignTab.sublime-settings",
+		"/C/Users/Administrator/AppData/Local/Google/Chrome/User Data/Default/Extensions/mnjdjjiobjicmlhnjlogfgbibihjhkeo/4.0.0_0/manifest.json",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/View In Browser.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/C/Users/Administrator/Google Drive/Code/Trailblazer/html/advisor.html",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/Administrator/Google Drive/12grade/Engineering/ROV/ROV 2016/EE/code/PC_SIDE/build-tmp/source/PC_SIDE.java",
+		"/C/Users/Administrator/Google Drive/12grade/Engineering/ROV/ROV 2016/EE/code/PC_SIDE/calculationFunctions.pde",
+		"/C/Users/Administrator/Google Drive/12grade/Engineering/ROV/ROV 2016/EE/code/PC_SIDE/PC_SIDE.pde",
+		"/C/Users/Administrator/Google Drive/12grade/Engineering/ROV/ROV 2016/EE/code/PC_SIDE/comPort.pde",
+		"/C/Users/Administrator/Google Drive/Code/MAI/index.html",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/User/BufferScroll.sublime-settings",
+		"/C/Users/Administrator/workspace/FRC 2016 4253/src/org/usfirst/frc/team6/robot/PIDHandler.java",
+		"/C/Users/Administrator/workspace/FRC 2016 4253/src/org/usfirst/frc/team6/robot/ContourStruct.java",
+		"/C/Users/Administrator/workspace/FRC 2016 4253/src/org/usfirst/frc/team6/robot/Robot.java",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/BufferScroll/BufferScroll.sublime-settings",
+		"/C/Users/Administrator/workspace/FRC 2016 4253/src/org/usfirst/frc/team6/robot/LineStruct.java",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/Administrator/AppData/Local/Temp/Temp1__p_poe_edgar_allan_p74mu.zip/index.html",
+		"/C/Users/Administrator/wpilib/java/current/javadoc/allclasses-frame.html",
+		"/C/Users/Administrator/Desktop/TestCode/src/org/usfirst/frc/team2222/robot/Robot.java",
+		"/C/Users/Administrator/Desktop/ROV/_2014/ROV_2014/ROV_2014.ino",
+		"/C/Users/Administrator/Desktop/ROV/_2014/ROV_2014/definitions.h",
+		"/C/Users/Administrator/Desktop/pi/new1.py",
+		"/C/Users/Administrator/Google Drive/Code/trevor/main.js",
+		"/C/Users/Administrator/Google Drive/Code/trevor/blank.html",
+		"/C/Users/Administrator/Google Drive/Code/trevor/manifest.json",
+		"/C/Users/Administrator/Desktop/pi/oldHID.py",
+		"/C/Users/Administrator/Desktop/pi/newHID.py",
+		"/C/Users/Administrator/Desktop/pi/test.py"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 100.0,
+		"where_history":
+		[
+			"C:\\Users\\Joseph Chuang\\Google Drive\\Code\\Trailblazer\\js",
+			"C:\\Users\\Joseph Chuang\\Google Drive\\Code\\Trailblazer",
+			"C:\\Users\\Joseph Chuang\\Google Drive\\Code\\Trailblazer\\js",
+			"C:\\Users\\Joseph Chuang\\Google Drive\\Code\\Trailblazer",
+			"C:\\Users\\Administrator\\Google Drive\\Code\\Trailblazer\\js",
+			"<current file>,C:\\Users\\Administrator\\Google Drive\\Code\\Trailblazer\\js",
+			"<current file>,<open folders>",
+			"<current file>",
+			"C:\\Users\\Administrator\\Google Drive\\12grade\\Engineering\\ROV\\ROV 2016\\EE\\code\\PC_SIDE",
+			"<current file>",
+			"<current file>,<open folders>",
+			"<current file>",
+			"<current file>,C:\\xampp\\htdocs",
+			"<current file>",
+			"C:\\xampp\\htdocs"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sync",
+			"version-string",
+			"status",
+			"sub",
+			"setting",
+			"sub",
+			"leaf",
+			"bgcan",
+			"render",
+			"mainNode",
+			"export",
+			"save",
+			"attachTo",
+			"push",
+			"settings_sub",
+			"display: non",
+			"function()",
+			"settings_s",
+			"saveall",
+			"settings",
+			"save",
+			"bar_right",
+			"setting",
+			"tooltips",
+			"cat_s",
+			"ref",
+			"sub_page",
+			"setting",
+			"cup_main",
+			"attachtool",
+			"console.log",
+			"updateCategbar",
+			"updateCa",
+			"categE",
+			"updatecateg",
+			"updatecat",
+			"mainNode",
+			"update",
+			"console.",
+			"arrayD",
+			"render",
+			"console",
+			"mainNode",
+			"arrayD",
+			"arrayN",
+			"mainNode",
+			"loadCateg",
+			"data",
+			"nodeArray",
+			"mainNode",
+			"categ_",
+			"updateCategBar",
+			"backbutton",
+			"pushcategtoboard",
+			"pushcategto",
+			"title",
+			"add_new_card",
+			"pushNodeToSub",
+			"setOnclick",
+			"loadCateg",
+			"push",
+			"input",
+			"subpage",
+			"n.push",
+			"console.log",
+			"pushmain",
+			"pushMain",
+			"treemain",
+			"expand_c",
+			"returnToMain",
+			"expand_card",
+			"backbutton",
+			"arrow",
+			"pushMainH",
+			"pushMain",
+			"add_new",
+			"submode",
+			"setbaseo",
+			"refresh_card",
+			"expand_card",
+			"pushNodeToSub",
+			"delete_card",
+			".box",
+			"switchcateg",
+			"switchca",
+			"switchCateg",
+			"pushcategto",
+			"push",
+			"pushCategToBoa",
+			"pushmain",
+			"update",
+			"tooltip",
+			"tool",
+			"attachTool",
+			"title",
+			"updateCategBar",
+			"pushCate",
+			"leafbot",
+			"box",
+			"card",
+			"plus.png",
+			"plus.",
+			"plus.png",
+			"add_card",
+			"plus.png",
+			"add_",
+			"add_card",
+			"add_",
+			"add_card",
+			"map",
+			"task",
+			"map",
+			"render",
+			"leafbottom",
+			"top_",
+			"top",
+			"bar_top",
+			"cup_sub_title",
+			"cup_sub",
+			"bar",
+			"border",
+			"top",
+			"bar_top",
+			"maxP",
+			"clampn",
+			"bgc",
+			"bgm",
+			"cup_main"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"() =>",
+			"pushCategToBoard",
+			"N.updateName",
+			"N.nextId",
+			"N.loadAll",
+			"N.saveAll",
+			"N.setOnclick",
+			"setOnclick",
+			"N.find",
+			"nextNodeId",
+			"setNodeOnclicks",
+			"nodeArray",
+			"loadAllNodes",
+			"saveAllNodes",
+			"STATUS.subMode",
+			"STATUS.subpageId",
+			"STATUS.categ",
+			"STYLE",
+			"_style_.line",
+			"_style_.botPartition",
+			"_style_.line",
+			"logs",
+			"logs_length",
+			"anglePid_used",
+			"BBa",
+			"h3",
+			"</b></h4>",
+			"<h4><b>",
+			"</b><h4>",
+			"<h4><b>",
+			"BBa",
+			"BBA",
+			"<i>E. coli</i>",
+			"<a href = \"http://parts.igem.org/Part:BBa_ I765001\">BBa_ I765001</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_1610102\">BBa_1610102</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_E0840\">BBa_E0840</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_K1510009\">BBa_K1510009</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_K1610105\">BBa_K1610105</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_B0015\">Bba_B0015</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_B0034\">Bba_B0034</a>",
+			"<a href = \"http://parts.igem.org/Part:BBa_K608351\">Bba_K608351</a>",
+			"<i>et al.</i>",
+			"\"",
+			"sm",
+			"Lato",
+			"stripeCount",
+			"ctx",
+			"15",
+			"2015",
+			"week2",
+			"dayMode",
+			"weekMode"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "html/main.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1722,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								524,
+								524
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sass/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1159,
+								1159
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1056.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/params.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5075,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								342,
+								342
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 866,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								472,
+								472
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/notebook.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "js/save.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								502,
+								502
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "js/tree.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2774,
+								2780
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1374.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.textarea":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "Packages/Processing/Build Systems/Processing.sublime-build",
+	"project": "trailblazer-site.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"tree",
+				"js\\tree.js"
+			],
+			[
+				"canv",
+				"js\\bgCanvas.js"
+			],
+			[
+				"tas",
+				"js\\task.js"
+			],
+			[
+				"main",
+				"js\\main.js"
+			],
+			[
+				"para",
+				"js\\params.js"
+			],
+			[
+				"bas",
+				"js\\base.js"
+			],
+			[
+				"scss",
+				"sass\\main.scss"
+			],
+			[
+				"main.",
+				"css\\main.css"
+			],
+			[
+				"task.j",
+				"js\\task.js"
+			],
+			[
+				"param",
+				"js\\params.js"
+			],
+			[
+				"main.js",
+				"js\\main.js"
+			],
+			[
+				"main.ht",
+				"html\\main.html"
+			],
+			[
+				".css",
+				"css\\main.css"
+			],
+			[
+				"tree.",
+				"js\\tree.js"
+			],
+			[
+				"backgroud",
+				"js\\background.js"
+			],
+			[
+				".json",
+				"manifest.json"
+			],
+			[
+				"back",
+				"js\\background.js"
+			],
+			[
+				"bgc",
+				"js\\bgCanvas"
+			],
+			[
+				"main.css",
+				"css\\main.css"
+			],
+			[
+				"mani",
+				"manifest.json"
+			],
+			[
+				"scrum",
+				"scrum"
+			],
+			[
+				"tutori",
+				"html\\tutorial.html"
+			],
+			[
+				"fonts",
+				"sass\\_fonts.scss"
+			],
+			[
+				"main.scss",
+				"sass\\main.scss"
+			],
+			[
+				"main.h",
+				"html\\main.html"
+			],
+			[
+				"scr",
+				"scrum"
+			],
+			[
+				"noteb",
+				"js\\notebook.js"
+			],
+			[
+				"base",
+				"js\\base.js"
+			],
+			[
+				"home",
+				"homepage.php"
+			],
+			[
+				"model",
+				"modeling.php"
+			],
+			[
+				"hum",
+				"human_practice.php"
+			],
+			[
+				"attr",
+				"attributions.php"
+			],
+			[
+				"col",
+				"collaborations.php"
+			],
+			[
+				"mo",
+				"modeling.php"
+			],
+			[
+				"project",
+				"project.php"
+			],
+			[
+				"part",
+				"Parts.php"
+			],
+			[
+				"we",
+				"wetlab.php"
+			],
+			[
+				"attri",
+				"attributions.php"
+			],
+			[
+				"achie",
+				"achievements.php"
+			],
+			[
+				"wetl",
+				"wetlab.php"
+			],
+			[
+				"nav",
+				"navigation.php"
+			],
+			[
+				"note",
+				"notebook.php"
+			],
+			[
+				"compi",
+				"compiled.css"
+			],
+			[
+				"navia",
+				"navigation.php"
+			],
+			[
+				"team",
+				"team.php"
+			],
+			[
+				"hom",
+				"homepage.php"
+			],
+			[
+				"coll",
+				"collaborations.php"
+			],
+			[
+				"human",
+				"human_practice.php"
+			],
+			[
+				"pract",
+				"human_practice.php"
+			],
+			[
+				"attribu",
+				"attributions.php"
+			],
+			[
+				"par",
+				"Parts.php"
+			],
+			[
+				"parts",
+				"Parts.php"
+			],
+			[
+				"notebook",
+				"notebook.php"
+			],
+			[
+				"na",
+				"navigation.php"
+			],
+			[
+				"mode",
+				"modeling.php"
+			],
+			[
+				"wel",
+				"wetlab.php"
+			],
+			[
+				"navi",
+				"navigation.php"
+			],
+			[
+				"proje",
+				"project.php"
+			],
+			[
+				"wet",
+				"wetlab.php"
+			],
+			[
+				"achi",
+				"achievements.php"
+			],
+			[
+				"colla",
+				"collaborations.php"
+			],
+			[
+				"projec",
+				"project.php"
+			],
+			[
+				"pro",
+				"project_overview.php"
+			],
+			[
+				"safety",
+				"safety.php"
+			],
+			[
+				"at",
+				"attributions.php"
+			],
+			[
+				"comp",
+				"compiled.css"
+			],
+			[
+				"css",
+				"static\\bootstrap.css"
+			],
+			[
+				"tea",
+				"team.php"
+			],
+			[
+				"proj",
+				"project.php"
+			],
+			[
+				"head",
+				"head.php"
+			],
+			[
+				"compil",
+				"compiled.css"
+			],
+			[
+				"js",
+				"static\\field.js"
+			],
+			[
+				"foot",
+				"footer.php"
+			],
+			[
+				"mod",
+				"modeling.php"
+			],
+			[
+				"foote",
+				"footer.php"
+			],
+			[
+				"hoe",
+				"homepage.less"
+			],
+			[
+				"saf",
+				"safety.php"
+			],
+			[
+				"boot",
+				"static\\bootstrap.css"
+			],
+			[
+				"bootstrap",
+				"static\\bootstrap.css"
+			],
+			[
+				"wetlab",
+				"wetlab.php"
+			],
+			[
+				"php",
+				"navigation.php"
+			],
+			[
+				"meda",
+				"medals.php"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"huma",
+				"human_practice.php"
+			],
+			[
+				"homepa",
+				"homepage.php"
+			],
+			[
+				"footer",
+				"footer.php"
+			],
+			[
+				"achieve",
+				"achievements.php"
+			],
+			[
+				"field",
+				"static\\field.js"
+			],
+			[
+				"slides",
+				"static\\slidesjs\\jquery.slides.js"
+			],
+			[
+				"jquery.min",
+				"jquery-2.1.3.min.js"
+			],
+			[
+				"bootstra",
+				"static\\bootstrap.css"
+			],
+			[
+				"boo",
+				"static\\bootstrap.css"
+			],
+			[
+				"boots",
+				"static\\bootstrap.css"
+			],
+			[
+				"bootstr",
+				"bootstrap.min.js"
+			],
+			[
+				"wetla",
+				"wetlab.php"
+			],
+			[
+				".js",
+				"tile.js"
+			],
+			[
+				"field.js",
+				"static\\field_homepage.js"
+			],
+			[
+				"fieldjs",
+				"static\\field.js"
+			],
+			[
+				"practic",
+				"human_practice.php"
+			],
+			[
+				"auto",
+				"auto list"
+			],
+			[
+				"medals",
+				"medals.php"
+			],
+			[
+				"pic",
+				"pic list"
+			],
+			[
+				"medal",
+				"medals.php"
+			],
+			[
+				"sa",
+				"safety.php"
+			],
+			[
+				"modelin",
+				"modeling.php"
+			],
+			[
+				"safet",
+				"safety.php"
+			],
+			[
+				"com",
+				"compiled.css"
+			],
+			[
+				"navig",
+				"navigation.php"
+			],
+			[
+				"homep",
+				"homepage.less"
+			],
+			[
+				"naviga",
+				"navigation.php"
+			],
+			[
+				"style",
+				"style.less"
+			],
+			[
+				"safe",
+				"safety.php"
+			],
+			[
+				"hope",
+				"homepage.php"
+			],
+			[
+				"compiled",
+				"compiled.css"
+			],
+			[
+				"",
+				"C:\\Users\\Administrator\\Desktop\\fieldb.js"
+			],
+			[
+				"modeli",
+				"modeling.php"
+			],
+			[
+				"compile",
+				"compiled.css"
+			],
+			[
+				"less",
+				"style.less"
+			],
+			[
+				"todc",
+				"todc-bootstrap\\css\\todc-bootstrap.min.css"
+			],
+			[
+				"bootstrapmin.css",
+				"static\\bootstrap.min.css"
+			],
+			[
+				"find",
+				"Find Results"
+			],
+			[
+				"modeling",
+				"modeling.php"
+			],
+			[
+				"head.",
+				"head.php"
+			],
+			[
+				"homepage.php",
+				"homepage.php"
+			],
+			[
+				"homepage.less",
+				"homepage.less"
+			],
+			[
+				"project_a",
+				"project_abstract.php"
+			],
+			[
+				"homepage",
+				"homepage.php"
+			],
+			[
+				"les",
+				"homepage.less"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\Administrator\\Google Drive\\11grade\\Habivator\\Habivator.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 293.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

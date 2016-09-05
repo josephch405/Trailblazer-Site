@@ -77,13 +77,13 @@ N = {
      * Saves mainNode directly to storage
      * @return NULL
      */
-    saveAll: function() {
+    saveAll: function() {/*
         chrome.storage.local.set({
             'mainNode': mainNode
         }, function() {});
         chrome.storage.local.set({
             'STATUS': STATUS
-        }, function() {});
+        }, function() {});*/
     },
     /**
      * [loadCateg description]

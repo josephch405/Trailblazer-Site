@@ -43,6 +43,7 @@ div input,
 #settings_sub_page,
 #cat_sub_page,
 #bgCanvas,
+#login_panel,
 .bar {
     position: absolute;
     z-index: 2;
@@ -56,6 +57,30 @@ div input,
     background-color: white;
     z-index: 100;
     position:absolute;
+}
+
+#login_panel{
+    @include size(30vw, 40vh);
+    top:20vh;
+    left:35vw;
+    background-color:white;
+    box-shadow: 0 0 .8vw 0 black;
+    z-index:20; 
+    color:#555555;
+    font-size: 1vw;
+    padding:1%;
+    input{
+        @include size(80%, 10%);
+        margin-top: 6%;
+        margin-bottom: 6%;
+        position:static;
+        border-width: 2px;
+        border-style: solid;
+        border-color:#BBBBBB;
+    }
+    button{
+        margin-top: 4%;
+    }
 }
 
 #bgCanvas {

@@ -4,11 +4,10 @@
  */
 
 //external packages
+_ = require('lodash');
 React = require('react');
 ReactDOM = require('react-dom');
-_ = require('lodash');
-$ = require('jquery');
-require("jquery-ui");
+firebase = require("firebase");
 
 //internal packages for organization
 require("./params.js");
@@ -19,6 +18,14 @@ require("./notebook.js");
 require("./settings.js");
 require("./save.js");
 require("./bgCanvas.js");
+
+var config = {
+    apiKey: "AIzaSyBBhR0vk7c0kAGVl0qcRaIQC04s5_P_CRQ",
+    authDomain: "trailblazer-1cc82.firebaseapp.com",
+    databaseURL: "https://trailblazer-1cc82.firebaseio.com",
+    storageBucket: "trailblazer-1cc82.appspot.com"
+};
+firebase.initializeApp(config);
 
 //deletes card with ID/sub ID, then SAVES
 delete_card = function(_id) {
@@ -164,6 +171,7 @@ checkoutNodes = function() {
     N.evalAll();
 }
 
+/*
 chrome.storage.local.get('versionStamp', function(result) {
     if (result.versionStamp >= 1) {
         loadProper();
@@ -194,6 +202,7 @@ loadProper = function() {
         T.loadAll(result.taskData);
     });
 }
+*/
 
 $("#bar_bottom").tooltip(STYLE.tooltip);
 
