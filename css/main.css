@@ -18,7 +18,6 @@ body {
   font-size: 0px; }
 
 div div,
-div input,
 #bar_top,
 #greypage,
 #cup_sub_page,
@@ -26,7 +25,7 @@ div input,
 #settings_sub_page,
 #cat_sub_page,
 #bgCanvas,
-#login_panel,
+#login_page,
 .bar {
   position: absolute;
   z-index: 2;
@@ -41,28 +40,58 @@ div input,
   z-index: 100;
   position: absolute; }
 
+#login_page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #333333;
+  z-index: 19; }
+
 #login_panel {
-  width: 30vw;
-  height: 40vh;
-  top: 20vh;
-  left: 35vw;
-  background-color: white;
-  box-shadow: 0 0 .8vw 0 black;
+  font-family: Open Sans;
+  width: 40vw;
+  height: 30vw;
+  left: 30vw;
+  top: 10vw;
+  background-color: #FFFFFF;
   z-index: 20;
   color: #555555;
-  font-size: 1vw;
-  padding: 1%; }
-  #login_panel input {
-    width: 80%;
-    height: 10%;
-    margin-top: 6%;
-    margin-bottom: 6%;
+  font-size: 2vw;
+  padding: 3vw;
+  border-radius: .5vw; }
+  #login_panel #login_btn_wrapper {
+    text-align: center;
+    width: 34vw; }
+  #login_panel .inputBar {
     position: static;
+    height: 30%;
+    margin-top: 2vh; }
+  #login_panel input {
+    width: 34vw;
     border-width: 2px;
     border-style: solid;
-    border-color: #BBBBBB; }
+    border-color: #BBBBBB;
+    font-size: 2vw; }
+  #login_panel input:focus ~ .floating-label,
+  #login_panel input:not(:focus):valid ~ .floating-label {
+    top: -5vw;
+    left: 0px;
+    font-size: 1vw;
+    opacity: 1;
+    position: relative; }
+  #login_panel .floating-label {
+    position: relative;
+    pointer-events: none;
+    left: 20px;
+    top: -2.8vw;
+    font-size: 2vw;
+    transition: 0.2s ease all; }
   #login_panel button {
-    margin-top: 4%; }
+    color: white;
+    background-color: #FFA500;
+    margin-top: 4%;
+    font-size: 1.2vw;
+    border: 0px solid;
+    padding: 2vw; }
 
 #bgCanvas {
   z-index: 0;
@@ -380,7 +409,7 @@ div input,
 .rr > div:first-child {
   border-left: solid .5vw #FF0000; }
 
-#tutorial {
+#btnLogout {
   position: fixed;
   right: 0px;
   bottom: 0px;

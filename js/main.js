@@ -25,7 +25,65 @@ var config = {
     databaseURL: "https://trailblazer-1cc82.firebaseio.com",
     storageBucket: "trailblazer-1cc82.appspot.com"
 };
+
 firebase.initializeApp(config);
+
+const loginEmail = $("#loginEmail");
+const loginPassword = $("#loginPassword");
+const btnLogin = $("#btnLogin");
+const btnRegister = $("#btnRegister");
+const btnLogout = $("#btnLogout");
+userStatus = null;
+
+const auth = firebase.auth();
+
+loginPassword.keyup(function(){
+    if(event.keyCode == 13){
+        btnLogin.click();
+    }
+});
+
+btnLogin.click(function() {
+    const promise = auth.signInWithEmailAndPassword(loginEmail.val(), loginPassword.val());
+    promise.catch(e => console.log(e.message));
+})
+
+btnRegister.click(function() {
+    const promise = auth.createUserWithEmailAndPassword(loginEmail.val(), loginPassword.val());
+    promise.catch(e => console.log(e.message));
+})
+
+btnLogout.click(function() {
+    const promise = firebase.auth().signOut().then(function() {
+        fromMainToLogin();
+    }, function(error) {
+        // An error happened.
+    });
+
+})
+
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        console.log(user);
+        userStatus = user;
+        fromLoginToMain();
+    } else {
+        console.log("not logged in");
+        userStatus = null;
+    }
+})
+
+
+
+
+
+const database = firebase.database();
+
+storageTest = function() {
+    firebase.database().ref('users/' + userStatus.uid).set({
+        hi: "hi"
+    });
+}
 
 //deletes card with ID/sub ID, then SAVES
 delete_card = function(_id) {
@@ -72,7 +130,6 @@ pushCategToBoard = function(_categ) {
     attachTooltips();
 }
 
-
 //opens settings subpage
 openSettings = function() {
     greypage(true);
@@ -95,6 +152,16 @@ expand_card = function(_id) {
     N.push();
     N.saveAll();
     return -1;
+}
+
+fromLoginToMain = function(){
+    $("#login_page").hide();
+}
+
+fromMainToLogin = function(){
+    $("#login_page").show();
+    loginEmail.val("");
+    loginPassword.val("");
 }
 
 //clears all subpage types and greypage, pushes categ according to STATUS, SAVES
@@ -181,10 +248,11 @@ chrome.storage.local.get('versionStamp', function(result) {
         N.saveAll();
     }
 });
+*/
 
-chrome.storage.local.set({ 'versionStamp': 1 });
 
 loadProper = function() {
+    /*
     chrome.storage.local.get('mainNode', function(result) {
         N.loadAll(result.mainNode);
         //N.render();
@@ -200,9 +268,10 @@ loadProper = function() {
 
     chrome.storage.local.get('taskData', function(result) {
         T.loadAll(result.taskData);
-    });
+    });*/
 }
-*/
+
+loadProper();
 
 $("#bar_bottom").tooltip(STYLE.tooltip);
 

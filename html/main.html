@@ -9,16 +9,21 @@
 
 <body>
     <div id="loading_cover"></div>
-    <div id="login_panel">
-        Email:
-        <br>
-        <input>
-        <br> Password:
-        <br>
-        <input>
-        <br>
-        <button>Login</button>
-        <button>Register</button>
+    <div id="login_page">
+        <div id="login_panel">
+            <div class = "inputBar">
+                <input id="loginEmail" required>
+                <span class="floating-label">Email</span>
+            </div>
+            <div class = "inputBar">
+                <input type=password id="loginPassword" required>
+                <span class="floating-label">Password</span>
+            </div>
+            <div id="login_btn_wrapper">
+                <button id="btnLogin">Login</button>
+                <button id="btnRegister">Register</button>
+            </div>
+        </div>
     </div>
     <canvas id="bgCanvas">
     </canvas>
@@ -51,7 +56,7 @@
         <textarea tabindex="-1" maxlength="2000" id="nbarea" spellcheck="false"></textarea>
     </div>
     <a id="settings">Settings</a>
-    <a id="tutorial">Help</a>
+    <a id="btnLogout">Logout</a>
 </body>
 <script src="..\js\params.js"></script>
 <script src="..\js\bundle.js"></script>

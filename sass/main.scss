@@ -35,7 +35,6 @@ body {
 }
 
 div div,
-div input,
 #bar_top,
 #greypage,
 #cup_sub_page,
@@ -43,7 +42,7 @@ div input,
 #settings_sub_page,
 #cat_sub_page,
 #bgCanvas,
-#login_panel,
+#login_page,
 .bar {
     position: absolute;
     z-index: 2;
@@ -51,35 +50,70 @@ div input,
     box-sizing: border-box;
 }
 
-#loading_cover{
-    width:100vw;
+#loading_cover {
+    width: 100vw;
     height: 100vh;
     background-color: white;
     z-index: 100;
-    position:absolute;
+    position: absolute;
 }
 
-#login_panel{
-    @include size(30vw, 40vh);
-    top:20vh;
-    left:35vw;
-    background-color:white;
-    box-shadow: 0 0 .8vw 0 black;
-    z-index:20; 
-    color:#555555;
-    font-size: 1vw;
-    padding:1%;
-    input{
-        @include size(80%, 10%);
-        margin-top: 6%;
-        margin-bottom: 6%;
+#login_page {
+    @include size(100vw, 100vh);
+    background-color: #333333;
+    z-index: 19;
+}
+
+#login_panel {
+    font-family: Open Sans;
+    @include size(40vw, 30vw);
+    left: 30vw;
+    top: 10vw;
+    background-color: #FFFFFF;
+    z-index: 20;
+    color: #555555;
+    font-size: 2vw;
+    padding: 3vw;
+    border-radius: .5vw;
+    #login_btn_wrapper {
+        text-align: center;
+        width: 34vw;
+    }
+    .inputBar{
         position:static;
+        height:30%;
+        margin-top: 2vh;
+    }
+    input {
+        width: 34vw;
         border-width: 2px;
         border-style: solid;
-        border-color:#BBBBBB;
+        border-color: #BBBBBB;
+        font-size: 2vw;
     }
-    button{
+    input:focus ~ .floating-label,
+    input:not(:focus):valid ~ .floating-label {
+        top: -5vw;
+        left: 0px;
+        font-size: 1vw;
+        opacity: 1;
+        position:relative;
+    }
+    .floating-label {
+        position: relative;
+        pointer-events: none;
+        left: 20px;
+        top: -2.8vw;
+        font-size:2vw;
+        transition: 0.2s ease all;
+    }
+    button {
+        color:white;
+        background-color: #FFA500;
         margin-top: 4%;
+        font-size: 1.2vw;
+        border: 0px solid;
+        padding: 2vw;
     }
 }
 
@@ -463,7 +497,7 @@ div input,
     border-left: solid .5vw #FF0000;
 }
 
-#tutorial {
+#btnLogout {
     position: fixed;
     right: 0px;
     bottom: 0px;
@@ -631,4 +665,3 @@ div input,
         box-shadow: 0 0 .5vh 0 black;
     }
 }
-
