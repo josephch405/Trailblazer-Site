@@ -71,10 +71,6 @@ boolToCol = function(ticked) {
 
 
 setBaseOnclicks = function() {
-    $("#categ_1").click(function() { pushCategToBoard(0); });
-    $("#categ_2").click(function() { pushCategToBoard(1); });
-    $("#categ_3").click(function() { pushCategToBoard(2); });
-
 
     $('#greypage').click(returnToMain);
 
@@ -119,3 +115,4 @@ JSONimport = function(string) {
 clampNum = function(min, num, max){
      return Math.min(Math.max(num, min), max);
 }
+

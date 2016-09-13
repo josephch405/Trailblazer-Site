@@ -8,6 +8,8 @@
  * @type {Object}
  */
 
+ ver = 1;
+
 STYLE = {
     "colors": {
         "LINE": "#FFFFFF",
@@ -71,7 +73,7 @@ subPlusCardText = '<div id = "sub_add_card" class = "inline card"><img src = "..
  * @type {Object}
  */
 STATUS = {
-    "categ": 1,
+    "categ": 0,
     "subpageId": -1,
     "subMode": false,
     "settingsMode": false,
@@ -79,3 +81,9 @@ STATUS = {
         "tasksNB": false
     }
 };
+
+mainNode = [
+    { "name": "Category", "data": [] }/*,
+    { "name": "Hobbies", "data": [] },
+    { "name": "Habits", "data": [] }*/
+];

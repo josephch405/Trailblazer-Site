@@ -12,6 +12,7 @@ firebase = require("firebase");
 //internal packages for organization
 require("./params.js");
 require("./base.js");
+require("./fbase.js")
 require("./tree.js");
 require("./task.js");
 require("./notebook.js");
@@ -19,70 +20,9 @@ require("./settings.js");
 require("./save.js");
 require("./bgCanvas.js");
 
-var config = {
-    apiKey: "AIzaSyBBhR0vk7c0kAGVl0qcRaIQC04s5_P_CRQ",
-    authDomain: "trailblazer-1cc82.firebaseapp.com",
-    databaseURL: "https://trailblazer-1cc82.firebaseio.com",
-    storageBucket: "trailblazer-1cc82.appspot.com"
-};
 
-firebase.initializeApp(config);
-
-const loginEmail = $("#loginEmail");
-const loginPassword = $("#loginPassword");
-const btnLogin = $("#btnLogin");
-const btnRegister = $("#btnRegister");
-const btnLogout = $("#btnLogout");
-userStatus = null;
-
-const auth = firebase.auth();
-
-loginPassword.keyup(function(){
-    if(event.keyCode == 13){
-        btnLogin.click();
-    }
-});
-
-btnLogin.click(function() {
-    const promise = auth.signInWithEmailAndPassword(loginEmail.val(), loginPassword.val());
-    promise.catch(e => console.log(e.message));
-})
-
-btnRegister.click(function() {
-    const promise = auth.createUserWithEmailAndPassword(loginEmail.val(), loginPassword.val());
-    promise.catch(e => console.log(e.message));
-})
-
-btnLogout.click(function() {
-    const promise = firebase.auth().signOut().then(function() {
-        fromMainToLogin();
-    }, function(error) {
-        // An error happened.
-    });
-
-})
-
-firebase.auth().onAuthStateChanged(user => {
-    if (user) {
-        console.log(user);
-        userStatus = user;
-        fromLoginToMain();
-    } else {
-        console.log("not logged in");
-        userStatus = null;
-    }
-})
-
-
-
-
-
-const database = firebase.database();
-
-storageTest = function() {
-    firebase.database().ref('users/' + userStatus.uid).set({
-        hi: "hi"
-    });
+if (typeof window !== 'undefined') {
+    window.React = React;
 }
 
 //deletes card with ID/sub ID, then SAVES
@@ -149,16 +89,18 @@ expand_card = function(_id) {
     subpage(true);
     STATUS.subMode = true;
     //$("#cup_sub_title").val(N.find(_id).name);
+    //
     N.push();
-    N.saveAll();
+    console.log(STATUS.subMode);
     return -1;
 }
 
-fromLoginToMain = function(){
+fromLoginToMain = function() {
     $("#login_page").hide();
+    storageGet();
 }
 
-fromMainToLogin = function(){
+fromMainToLogin = function() {
     $("#login_page").show();
     loginEmail.val("");
     loginPassword.val("");
@@ -237,41 +179,6 @@ catPage = function(_in) {
 checkoutNodes = function() {
     N.evalAll();
 }
-
-/*
-chrome.storage.local.get('versionStamp', function(result) {
-    if (result.versionStamp >= 1) {
-        loadProper();
-    } else {
-        N.render();
-        S.render();
-        N.saveAll();
-    }
-});
-*/
-
-
-loadProper = function() {
-    /*
-    chrome.storage.local.get('mainNode', function(result) {
-        N.loadAll(result.mainNode);
-        //N.render();
-        //conso
-        chrome.storage.local.get('STATUS', function(res) {
-            STATUS = res.STATUS;
-            STATUS.subMode = false;
-            N.render();
-            S.render();
-        });
-        //pushCategToBoard(STATUS.categ);
-    });
-
-    chrome.storage.local.get('taskData', function(result) {
-        T.loadAll(result.taskData);
-    });*/
-}
-
-loadProper();
 
 $("#bar_bottom").tooltip(STYLE.tooltip);
 

@@ -1,8 +1,3 @@
-mainNode = [
-    { "name": "Work", "data": [] },
-    { "name": "Hobbies", "data": [] },
-    { "name": "Habits", "data": [] }
-];
 
 N = {
     /**
@@ -74,16 +69,11 @@ N = {
         return -1;
     },
     /**
-     * Saves mainNode directly to storage
+     * Saves mainNode and STATUS to storage
      * @return NULL
      */
-    saveAll: function() {/*
-        chrome.storage.local.set({
-            'mainNode': mainNode
-        }, function() {});
-        chrome.storage.local.set({
-            'STATUS': STATUS
-        }, function() {});*/
+    saveAll: function() {
+        storageSet();
     },
     /**
      * [loadCateg description]
@@ -410,9 +400,9 @@ SubNameInput = React.createClass({
     },
     render: function() {
         return (
-            <input value = {this.props.value} type = "text" class="cup_title" id="cup_sub_title" maxLength="20" onChange = {this.handleChange}/>
+            <input value = {this.props.value} type = "text" className="cup_title" id="cup_sub_title" maxLength="20" onChange = {this.handleChange}/>
         )
-    }
+    } 
 });
 
 SubCheckDiv = React.createClass({
@@ -449,38 +439,20 @@ Leaf = React.createClass({
 });
 
 LeafTop = React.createClass({
-    getInitialState: function() {
-        return this.props.data;
-    },
     render: function() {
         var LeafCtrlEText = "";
-        if (this.state.layer < 3) {
-            LeafCtrlEText = <LeafCtrlE tag = {this.state.id}/>
+        if (this.props.data.layer < 3) {
+            LeafCtrlEText = <LeafCtrlE tag = {this.props.data.id}/>
         }
         return (
             <div className = "card_t">
-                <LeafNameInput value = {this.state.name} tag = {this.state.id}/>
+                <LeafNameInput value = {this.props.data.name} tag = {this.props.data.id}/>
                 <div className = "card_ctrl">
-                <LeafCtrlD tag = {this.state.id}/>
+                <LeafCtrlD tag = {this.props.data.id}/>
                 {LeafCtrlEText}
                 
                 </div>
             </div>
-        )
-    }
-});
-
-LeafNameInput = React.createClass({
-    handleChange: function(event) {
-        N.updateName(this.props.tag, event.target.value);
-        N.saveAll();
-        N.push();
-    },
-    render: function() {
-        return (
-            <input maxLength="20" 
-            value = {this.props.value}
-            onChange = {this.handleChange}/>
         )
     }
 });
@@ -511,17 +483,29 @@ LeafCtrlD = React.createClass({
     }
 })
 
-LeafBox = React.createClass({
-    getInitialState: function() {
-        return this.props.data;
+LeafNameInput = React.createClass({
+    handleChange: function(event) {
+        N.updateName(this.props.tag, event.target.value);
+        N.saveAll();
+        N.push();
     },
+    render: function() {
+        return (
+            <input maxLength="20" 
+            value = {this.props.value}
+            onChange = {this.handleChange}/>
+        )
+    }
+});
+
+LeafBox = React.createClass({
     handleClick: function() {
-        N.flip_check(this.state.id);
+        N.flip_check(this.props.data.id);
         N.push();
         N.saveAll();
     },
     render: function() {
-        var data = this.state;
+        var data = this.props.data;
         var classString = "fade box ";
         var tagString = "fade boxTag " + bToCClass(data.checked);
         if (data.children.length == 0)
@@ -529,7 +513,7 @@ LeafBox = React.createClass({
         var idString = "box_" + data.id;
 
         return (
-            <div className = {classString} id = {idString} title = {this.props.data.name}>
+            <div className = {classString} id = {idString} title = {data.name}>
                 <div className = {tagString} onClick = {this.handleClick}></div>
                 {data.children.map(function(child) {
                     return <LeafBox key = {child.id} data = {child}/>;
@@ -610,8 +594,12 @@ CategI = React.createClass({
         N.push();
     },
     render: function() {
+        var w = 0;
+        if (this.props.tag < mainNode.length){
+            w = (1 - N.categPercentage(this.props.tag)) * 100 + "%"
+        }
         var divStyle = {
-            width: (1 - N.categPercentage(this.props.tag)) * 100 + "%"
+            width: w
         }
 
         var classString = "fade top_";
@@ -621,7 +609,7 @@ CategI = React.createClass({
         return (
             <div className = {classString} onClick = { this.handleClick} >
             <div className = 'top_title'>
-            <span>{this.props.name}</span>
+            <a href = "#">{this.props.name}</a>
             </div>
             <div className="prog" style = {divStyle}></div>
         </div>
