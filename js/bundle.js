@@ -1430,8 +1430,8 @@ Leaf = React.createClass({
         return this.props.data;
     },
     render: function () {
-        var idString = "card_" + this.state.id;
-        var classString = 'inline card ' + N.valueToColorClass(this.state.value);
+        var idString = "card_" + this.props.data.id;
+        var classString = 'inline card ' + N.valueToColorClass(this.props.data.value);
         return React.createElement(
             "div",
             { id: idString, className: classString },
