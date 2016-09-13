@@ -19,7 +19,7 @@ require("./notebook.js");
 require("./settings.js");
 require("./save.js");
 require("./bgCanvas.js");
-
+require("./intro.js");
 
 if (typeof window !== 'undefined') {
     window.React = React;

@@ -9,13 +9,38 @@
 
 <body>
     <div id="loading_cover"></div>
+    <div id="tutorial_page">
+        <div id="tut_1">
+            Hello.<br>
+            We are here to help.<br>
+            <a onclick = "introNext()" href="#">Next</a>
+        </div>
+        <div id="tut_2">
+            What overarching life goals do you have?
+            <a onclick = "introNext()" href="#">Next</a>
+        </div>
+        <div id="tut_3">
+
+            <a onclick = "introNext()" href="#">Next</a>
+        </div>
+        <div id="tut_4">
+            <a onclick = "introNext()" href="#">Next</a>
+        </div>
+        <div id="tut_5">
+            <a onclick = "introNext()" href="#">Next</a>
+        </div>
+    </div>
     <div id="login_page">
         <div id="login_panel">
-            <div class = "inputBar">
+            <div id="login_header">
+                <img id="login_icon" src="..\img\icon.png">
+                <br> Trailblazer
+            </div>
+            <div class="inputBar">
                 <input id="loginEmail" required>
                 <span class="floating-label">Email</span>
             </div>
-            <div class = "inputBar">
+            <div class="inputBar">
                 <input type=password id="loginPassword" required>
                 <span class="floating-label">Password</span>
             </div>

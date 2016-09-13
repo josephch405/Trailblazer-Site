@@ -49,28 +49,34 @@ div div,
 #login_panel {
   font-family: Open Sans;
   width: 40vw;
-  height: 30vw;
+  height: 32vw;
   left: 30vw;
-  top: 10vw;
+  top: 5vw;
   background-color: #FFFFFF;
   z-index: 20;
   color: #555555;
-  font-size: 2vw;
+  font-size: 1.5vw;
   padding: 3vw;
   border-radius: .5vw; }
+  #login_panel #login_header {
+    position: static;
+    text-align: center;
+    height: 20vh; }
+    #login_panel #login_header img {
+      height: 15vh; }
   #login_panel #login_btn_wrapper {
     text-align: center;
     width: 34vw; }
   #login_panel .inputBar {
     position: static;
-    height: 30%;
+    height: 20%;
     margin-top: 2vh; }
   #login_panel input {
     width: 34vw;
     border-width: 2px;
     border-style: solid;
     border-color: #BBBBBB;
-    font-size: 2vw; }
+    font-size: 1.5vw; }
   #login_panel input:focus ~ .floating-label,
   #login_panel input:not(:focus):valid ~ .floating-label {
     top: -5vw;
@@ -82,16 +88,17 @@ div div,
     position: relative;
     pointer-events: none;
     left: 20px;
-    top: -2.8vw;
-    font-size: 2vw;
+    top: -2.2vw;
+    font-size: 1.5vw;
     transition: 0.2s ease all; }
   #login_panel button {
     color: white;
     background-color: #FFA500;
-    margin-top: 4%;
+    margin-top: 2%;
     font-size: 1.2vw;
     border: 0px solid;
-    padding: 2vw; }
+    padding: 1vw 2vw 1vw 2vw;
+    height: 10vh; }
 
 #bgCanvas {
   z-index: 0;
@@ -554,5 +561,22 @@ div div,
     margin: 2vh;
     text-align: center;
     box-shadow: 0 0 .5vh 0 black; }
+
+#tutorial_page {
+  display: none;
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  position: absolute;
+  font-size: 3vh;
+  text-align: center; }
+  #tutorial_page > div {
+    width: 60vw;
+    height: 80vh;
+    top: 10vh;
+    left: 20vw; }
+  #tutorial_page a {
+    text-decoration: none; }
 
 /*# sourceMappingURL=main.css.map */

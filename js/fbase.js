@@ -79,6 +79,10 @@ storageGet = function() {
         if (snapshot.val() == ver) {
             loadProper();
         }
+        //load this to start introduction
+        else{
+            initIntro();
+        }
         //fallback if previous version (futureproofing only at this point)
     })
     console.log("storageSet end");

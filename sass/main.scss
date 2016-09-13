@@ -66,22 +66,30 @@ div div,
 
 #login_panel {
     font-family: Open Sans;
-    @include size(40vw, 30vw);
+    @include size(40vw, 32vw);
     left: 30vw;
-    top: 10vw;
+    top: 5vw;
     background-color: #FFFFFF;
     z-index: 20;
     color: #555555;
-    font-size: 2vw;
+    font-size: 1.5vw;
     padding: 3vw;
     border-radius: .5vw;
+    #login_header {
+        position: static;
+        text-align: center;
+        height: 20vh;
+        img {
+            height: 15vh;
+        }
+    }
     #login_btn_wrapper {
         text-align: center;
         width: 34vw;
     }
     .inputBar {
         position: static;
-        height: 30%;
+        height: 20%;
         margin-top: 2vh;
     }
     input {
@@ -89,7 +97,7 @@ div div,
         border-width: 2px;
         border-style: solid;
         border-color: #BBBBBB;
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
     input:focus ~ .floating-label,
     input:not(:focus):valid ~ .floating-label {
@@ -103,17 +111,18 @@ div div,
         position: relative;
         pointer-events: none;
         left: 20px;
-        top: -2.8vw;
-        font-size: 2vw;
+        top: -2.2vw;
+        font-size: 1.5vw;
         transition: 0.2s ease all;
     }
     button {
         color: white;
         background-color: #FFA500;
-        margin-top: 4%;
+        margin-top: 2%;
         font-size: 1.2vw;
         border: 0px solid;
-        padding: 2vw;
+        padding: 1vw 2vw 1vw 2vw;
+        height: 10vh;
     }
 }
 
@@ -161,7 +170,7 @@ div div,
     display: table;
     a {
         text-decoration: none;
-        color:black;
+        color: black;
         font-size: 3vh;
         vertical-align: middle;
         display: table-cell;
@@ -268,7 +277,7 @@ div div,
 
 #cup_sub_title {
     @include size(40%, 15%);
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 18vw;
     overflow: hidden;
@@ -672,5 +681,27 @@ div div,
         margin: 2vh;
         text-align: center;
         box-shadow: 0 0 .5vh 0 black;
+    }
+}
+
+#tutorial_page {
+    display:none;
+    background-color: white;
+    @include size(100vw, 100vh);
+    z-index: 100;
+    position: absolute;
+    font-size:3vh;
+    text-align: center;
+    > div {
+        @include size(60vw, 80vh);
+        top:10vh;
+        left: 20vw;
+    }
+    a{
+        text-decoration:none;
+        
+    }
+    #tut_1{
+
     }
 }

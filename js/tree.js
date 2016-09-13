@@ -579,6 +579,7 @@ CategH = React.createClass({
     }
 })
 
+//category editor button
 CategE = React.createClass({
     render: function() {
         return (<div className = 'fade' id = 'categ_e' onClick = {openCat}>
@@ -587,6 +588,7 @@ CategE = React.createClass({
     }
 })
 
+//category button in categbar
 CategI = React.createClass({
     handleClick: function() {
         STATUS.categ = this.props.tag;
