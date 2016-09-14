@@ -805,9 +805,9 @@ STATUS = {
     }
 };
 
-mainNode = [{ "name": "Category", "data": [] } /*,
-                                               { "name": "Hobbies", "data": [] },
-                                               { "name": "Habits", "data": [] }*/
+mainNode = [{ "name": "Group 1", "data": [] } /*,
+                                              { "name": "Hobbies", "data": [] },
+                                              { "name": "Habits", "data": [] }*/
 ];
 
 },{}],9:[function(require,module,exports){

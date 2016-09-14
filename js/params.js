@@ -83,7 +83,7 @@ STATUS = {
 };
 
 mainNode = [
-    { "name": "Category", "data": [] }/*,
+    { "name": "Group 1", "data": [] }/*,
     { "name": "Hobbies", "data": [] },
     { "name": "Habits", "data": [] }*/
 ];

@@ -141,7 +141,7 @@ div div,
     box-shadow: 0 0 .5vh 0;
     //border-radius: 2%;
     //border: black solid 2px;
-    @include size(16.5vw, 32vh);
+    @include size(16.5vw, 46%);
     @include margin(1vh, 1vh, .5vw, .5vw);
     * {
         font-size: 1.5vw;
@@ -262,8 +262,8 @@ div div,
 }
 
 #cup_main {
-    @include size(96%, 70%);
-    top: 14%;
+    @include size(96%, 80%);
+    top: 8%;
     left: 2%;
     overflow: hidden;
 }
@@ -425,9 +425,10 @@ div div,
     font-size: 2.2vh;
     border-width: 0 !important;
     border-radius: 0px;
-    background-color: rgba(100, 100, 100, .5);
+    background-color: rgba(100, 100, 100, 1);
     color: white;
     box-shadow: none;
+    opacity: 1;
 }
 
 .ui-tooltip-content {
@@ -699,7 +700,7 @@ div div,
     }
     a{
         text-decoration:none;
-        
+        background-color: #FFA200;
     }
     #tut_1{
 

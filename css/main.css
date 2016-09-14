@@ -112,7 +112,7 @@ div div,
 .card {
   box-shadow: 0 0 .5vh 0;
   width: 16.5vw;
-  height: 32vh;
+  height: 46%;
   margin-top: 1vh;
   margin-bottom: 1vh;
   margin-left: 0.5vw;
@@ -218,8 +218,8 @@ div div,
 
 #cup_main {
   width: 96%;
-  height: 70%;
-  top: 14%;
+  height: 80%;
+  top: 8%;
   left: 2%;
   overflow: hidden; }
 
@@ -352,9 +352,10 @@ div div,
   font-size: 2.2vh;
   border-width: 0 !important;
   border-radius: 0px;
-  background-color: rgba(100, 100, 100, 0.5);
+  background-color: #646464;
   color: white;
-  box-shadow: none; }
+  box-shadow: none;
+  opacity: 1; }
 
 .ui-tooltip-content {
   position: static; }
@@ -577,6 +578,7 @@ div div,
     top: 10vh;
     left: 20vw; }
   #tutorial_page a {
-    text-decoration: none; }
+    text-decoration: none;
+    background-color: #FFA200; }
 
 /*# sourceMappingURL=main.css.map */
