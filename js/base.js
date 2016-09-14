@@ -1,54 +1,9 @@
 /**
  * BASE.js
- * for (more or less) independent functions
+ * for (more or less) independent, utility functions
  */
 
-/**
- * MISC
- * Generates and returns a <div> head based on params
- * Params selected according to internal array
- * @param  {object} params      class, id, title
- * @param  {object} styleParams style properties
- * @return {String}             returns the div head
- */
-divHeadGen = function(params, styleParams) {
-    var text = "<div";
-    var paramList = ["id", "class", "title"];
-    var styleParamList = ["top", "bottom", "left", "right", "height",
-        "width", "background-color", "border-top", "border-bottom", "border-left", "border-right"
-    ];
-
-    if (params) {
-        for (var i in paramList) {
-            if (params[paramList[i]]) {
-                text += " " + paramList[i] + " = '" + params[paramList[i]] + "'";
-            }
-        }
-    }
-
-    if (styleParams) {
-        text += " style = '";
-        for (var i in styleParamList) {
-            if (styleParams[styleParamList[i]]) {
-                text += styleParamList[i] + ": " + styleParams[styleParamList[i]] + ";";
-            }
-        }
-        text += "'";
-    }
-    text += ">";
-    return text;
-}
-
-divClass = function(className) {
-    return divHeadGen({ "class": className });
-}
-
-/**
- * MISC
- * Converts boolean to its appropriate button class
- * @param  {bool} ticked    True is green, false is orange
- * @return {String}         Button class
- */
+//returns string for button class based on "ticked"
 bToCClass = function(ticked) {
     if (ticked) {
         return 'but_green';
@@ -56,63 +11,57 @@ bToCClass = function(ticked) {
     return 'but_orange';
 }
 
-/**
- * MISC
- * Converts boolean to its appropriate color
- * @param  {bool} ticked    True is green, false is orange
- * @return {String}         Color
- */
-boolToCol = function(ticked) {
-    if (ticked) {
-        return STYLE.colors.GREEN;
-    }
-    return STYLE.colors.ORANGE;
-}
-
 
 setBaseOnclicks = function() {
-
     $('#greypage').click(returnToMain);
-
-    $('#reset_btn').click(checkoutNodes);
-
+    $('#reset_btn').click(N.evalAll());
     $('#tutorial').click(openTutorial);
-
     $('#settings').click(openSettings);
 }
 
-/**
- * Finds and returns first item in array with id
- * @param  {[type]} arr [description]
- * @param  {[type]} i   [description]
- * @return {[type]}     [description]
- */
+//returns first item in array with id "i"
 findById = function(arr, i) {
     return arr[findIndexById(arr, i)];
 }
 
+//returns index of item in arr that has id "i"
 findIndexById = function(arr, i) {
     index = arr.findIndex(x => x.id == i)
     return index;
 }
 
-openTutorial = function() {
-    chrome.app.window.create('/html/tutorial.html', {
-        'state': "maximized"
-    });
-}
-
-
+//returns JSON text of _node
 JSONexport = function(_node) {
     var returnText = JSON.stringify(_node);
     return returnText;
 }
 
+//returns object parsed from JSON string
 JSONimport = function(string) {
     return JSON.parse(string);
 }
 
+//clamps num between min and max
 clampNum = function(min, num, max){
      return Math.min(Math.max(num, min), max);
 }
 
+//wipes all local data to default
+resetLocalData = function() {
+    STATUS = {
+        "categ": 0,
+        "subpageId": -1,
+        "subMode": false,
+        "settingsMode": false,
+        "settings": {
+            "tasksNB": false
+        }
+    };
+
+    mainNode = [
+        { "name": "Group 1", "data": [] }
+        /*,
+            { "name": "Hobbies", "data": [] },
+            { "name": "Habits", "data": [] }*/
+    ];
+}

@@ -1,8 +1,7 @@
 
 N = {
-    /**
-     * Creates new tree-formatted object based on parameters
-     */
+    
+    //Creates new tree-formatted object based on parameters
     create: function(input) {
         var _node = {
             "name": '',
@@ -88,16 +87,32 @@ N = {
         for (var i in _obj)
             N.arrayD(_categ).push(N.create(_obj[i]));
     },
+    /**
+     * Uses loadCateg to load all three categories
+     * @param  Array _obj   Array of all three categories to load
+     * @return NULL
+     */
+    loadAll: function(_obj) {
+        mainNode = [];
+        for (var i in _obj) {
+            N.loadCateg(_obj[i].name, _obj[i].data, i);
+        }
+    },
+    //returns all nodes in mainNode[_categ]
+    //sets mainNode[_categ] to _set if passed in
     arrayD: function(_categ, _set) {
         if (_set)
             mainNode[_categ].data = _set;
         return mainNode[_categ].data;
     },
+    //returns name of mainNode[_categ]
+    //sets name if _set is passed
     arrayN: function(_categ, _set) {
         if (_set)
             mainNode[_categ].name = _set;
         return mainNode[_categ].name;
     },
+    //returns percent completion of mainNode[index]
     categPercentage: function(index) {
         var c = 0;
         for (var i in N.arrayD(index)){
@@ -119,17 +134,7 @@ N = {
                 c += N.completion(_node.children[i]) / (2*_node.children.length);
         return c;
     },
-    /**
-     * Uses loadCateg to load all three categories
-     * @param  Array _obj   Array of all three categories to load
-     * @return NULL
-     */
-    loadAll: function(_obj) {
-        mainNode = [];
-        for (var i in _obj) {
-            N.loadCateg(_obj[i].name, _obj[i].data, i);
-        }
-    },
+    
     /**
      * Updates name of object fed, 
      * @param  {[type]} _id   [description]

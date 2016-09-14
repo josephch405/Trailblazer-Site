@@ -163,53 +163,10 @@ process.umask = function() { return 0; };
 },{}],2:[function(require,module,exports){
 /**
  * BASE.js
- * for (more or less) independent functions
+ * for (more or less) independent, utility functions
  */
 
-/**
- * MISC
- * Generates and returns a <div> head based on params
- * Params selected according to internal array
- * @param  {object} params      class, id, title
- * @param  {object} styleParams style properties
- * @return {String}             returns the div head
- */
-divHeadGen = function (params, styleParams) {
-    var text = "<div";
-    var paramList = ["id", "class", "title"];
-    var styleParamList = ["top", "bottom", "left", "right", "height", "width", "background-color", "border-top", "border-bottom", "border-left", "border-right"];
-
-    if (params) {
-        for (var i in paramList) {
-            if (params[paramList[i]]) {
-                text += " " + paramList[i] + " = '" + params[paramList[i]] + "'";
-            }
-        }
-    }
-
-    if (styleParams) {
-        text += " style = '";
-        for (var i in styleParamList) {
-            if (styleParams[styleParamList[i]]) {
-                text += styleParamList[i] + ": " + styleParams[styleParamList[i]] + ";";
-            }
-        }
-        text += "'";
-    }
-    text += ">";
-    return text;
-};
-
-divClass = function (className) {
-    return divHeadGen({ "class": className });
-};
-
-/**
- * MISC
- * Converts boolean to its appropriate button class
- * @param  {bool} ticked    True is green, false is orange
- * @return {String}         Button class
- */
+//returns string for button class based on "ticked"
 bToCClass = function (ticked) {
     if (ticked) {
         return 'but_green';
@@ -217,62 +174,57 @@ bToCClass = function (ticked) {
     return 'but_orange';
 };
 
-/**
- * MISC
- * Converts boolean to its appropriate color
- * @param  {bool} ticked    True is green, false is orange
- * @return {String}         Color
- */
-boolToCol = function (ticked) {
-    if (ticked) {
-        return STYLE.colors.GREEN;
-    }
-    return STYLE.colors.ORANGE;
-};
-
 setBaseOnclicks = function () {
-
     $('#greypage').click(returnToMain);
-
-    $('#reset_btn').click(checkoutNodes);
-
+    $('#reset_btn').click(N.evalAll());
     $('#tutorial').click(openTutorial);
-
     $('#settings').click(openSettings);
 };
 
-/**
- * Finds and returns first item in array with id
- * @param  {[type]} arr [description]
- * @param  {[type]} i   [description]
- * @return {[type]}     [description]
- */
+//returns first item in array with id "i"
 findById = function (arr, i) {
     return arr[findIndexById(arr, i)];
 };
 
+//returns index of item in arr that has id "i"
 findIndexById = function (arr, i) {
     index = arr.findIndex(x => x.id == i);
     return index;
 };
 
-openTutorial = function () {
-    chrome.app.window.create('/html/tutorial.html', {
-        'state': "maximized"
-    });
-};
-
+//returns JSON text of _node
 JSONexport = function (_node) {
     var returnText = JSON.stringify(_node);
     return returnText;
 };
 
+//returns object parsed from JSON string
 JSONimport = function (string) {
     return JSON.parse(string);
 };
 
+//clamps num between min and max
 clampNum = function (min, num, max) {
     return Math.min(Math.max(num, min), max);
+};
+
+//wipes all local data to default
+resetLocalData = function () {
+    STATUS = {
+        "categ": 0,
+        "subpageId": -1,
+        "subMode": false,
+        "settingsMode": false,
+        "settings": {
+            "tasksNB": false
+        }
+    };
+
+    mainNode = [{ "name": "Group 1", "data": [] }
+    /*,
+        { "name": "Hobbies", "data": [] },
+        { "name": "Habits", "data": [] }*/
+    ];
 };
 
 },{}],3:[function(require,module,exports){
@@ -541,10 +493,6 @@ require("./save.js");
 require("./bgCanvas.js");
 require("./intro.js");
 
-if (typeof window !== 'undefined') {
-    window.React = React;
-}
-
 //deletes card with ID/sub ID, then SAVES
 delete_card = function (_id) {
     var done = false;
@@ -572,8 +520,6 @@ delete_card = function (_id) {
     }
 
     N.saveAll();
-
-    return 1;
 };
 
 //pushes nodeArray(input) to main board, attaches tooltips
@@ -597,30 +543,32 @@ openSettings = function () {
     STATUS.settingsMode = true;
 };
 
+//opens category subpage
 openCat = function () {
     greypage(true);
     catPage(true);
     STATUS.catMode = true;
 };
 
+//expands card and opens "subpage" subpage
 expand_card = function (_id) {
-    STATUS.subpageId = _id;
     greypage(true);
     subpage(true);
     STATUS.subMode = true;
-    //$("#cup_sub_title").val(N.find(_id).name);
-    //
+    STATUS.subpageId = _id;
     N.push();
-    console.log(STATUS.subMode);
-    return -1;
 };
 
+//handle successful login event
 fromLoginToMain = function () {
     $("#login_page").hide();
     storageGet();
 };
 
+//handle logout event
 fromMainToLogin = function () {
+    resetLocalData();
+    N.push();
     $("#login_page").show();
     loginEmail.val("");
     loginPassword.val("");
@@ -641,26 +589,21 @@ returnToMain = function () {
     N.saveAll();
 };
 
-//attaches tooltips to all .box
+//attaches tooltips to all boxes
 attachTooltips = function () {
-    $(".box>.box").tooltip(STYLE.tooltip);
+    $(".box>.box").tooltip(tooltipStyle);
 };
 
-//uses pushCategToBoard, then updates categBar and STATUS
-
-
-//sets greypage display IO
+//sets on/off greypage display
 greypage = function (_in) {
     if (_in) {
         $("#greypage").css("display", "block");
-        //$("#greypage").removeClass("hidden_fade");
     } else {
         $("#greypage").css("display", "none");
-        //$("#greypage").addClass("hidden_fade");
     }
 };
 
-//sets subpage display IO
+//sets on/off subpage display
 subpage = function (_in) {
     if (_in) {
         $("#cup_sub_page").removeClass("hidden_top");
@@ -671,7 +614,7 @@ subpage = function (_in) {
     }
 };
 
-//sets settings display IO
+//sets on/off settings display
 settingsPage = function (_in) {
     if (_in) {
         $("#settings_sub_page").removeClass("hidden_top");
@@ -682,6 +625,7 @@ settingsPage = function (_in) {
     }
 };
 
+//sets on/off categ editor display
 catPage = function (_in) {
     if (_in) {
         $("#cat_sub_page").removeClass("hidden_top");
@@ -692,21 +636,13 @@ catPage = function (_in) {
     }
 };
 
-/**
- * [resetDay description]
- * @return {[type]} [description]
- */
-checkoutNodes = function () {
-    N.evalAll();
-};
-
-$("#bar_bottom").tooltip(STYLE.tooltip);
-
-setBaseOnclicks();
+$("#bar_bottom").tooltip(tooltipStyle);
 
 $(window).load(function () {
     $("#loading_cover").fadeOut("slow");
 });
+
+setBaseOnclicks();
 
 },{"./base.js":2,"./bgCanvas.js":3,"./fbase.js":4,"./intro.js":5,"./notebook.js":7,"./params.js":8,"./save.js":9,"./settings.js":10,"./task.js":11,"./tree.js":12,"firebase":13,"lodash":15,"react":185,"react-dom":16}],7:[function(require,module,exports){
 
@@ -737,59 +673,19 @@ $("#nbarea").keyup(function () {
 
 ver = 1;
 
-STYLE = {
-    "colors": {
-        "LINE": "#FFFFFF",
-        "LINE2": "#A3A3A3",
-        "GREEN": "#00FF00",
-        "ORANGE": "#FFA500"
+tooltipStyle = {
+    position: {
+        my: 'center bottom',
+        at: 'center top'
     },
-
-    "topPartition": [{
-        'height': '50%'
-    }, {
-        'height': '60%'
-    }, {
-        'height': '70%'
-    }],
-
-    "tooltip": {
-        position: {
-            my: 'center bottom',
-            at: 'center top'
-        },
-        track: false,
-        show: {
-            effect: "toggle"
-        },
-        hide: {
-            effect: "toggle"
-        }
+    track: false,
+    show: {
+        effect: "toggle"
+    },
+    hide: {
+        effect: "toggle"
     }
 };
-
-STYLE["line"] = ["solid 1px " + STYLE.colors.LINE, "solid 1px " + STYLE.colors.LINE2];
-
-STYLE["botPartition"] = [{
-    'top': '50%',
-    'height': '50%',
-    'border-top': STYLE.line[0]
-}, {
-    'top': '60%',
-    'height': '40%',
-    'border-top': STYLE.line[0]
-}, {
-    'top': '70%',
-    'height': '30%',
-    'border-top': STYLE.line[0]
-}];
-
-/**
- * Texts for plus-card texts
- * @type {String}
- */
-plusCardText = '<div id = "add_card" class = "inline card"><img src = "../img/plus.png"></div>';
-subPlusCardText = '<div id = "sub_add_card" class = "inline card"><img src = "../img/plus.png"></div>';
 
 /**
  * Status object for tracking user states
@@ -805,9 +701,10 @@ STATUS = {
     }
 };
 
-mainNode = [{ "name": "Group 1", "data": [] } /*,
-                                              { "name": "Hobbies", "data": [] },
-                                              { "name": "Habits", "data": [] }*/
+mainNode = [{ "name": "Group 1", "data": [] }
+/*,
+    { "name": "Hobbies", "data": [] },
+    { "name": "Habits", "data": [] }*/
 ];
 
 },{}],9:[function(require,module,exports){
@@ -1086,9 +983,8 @@ AddTask = React.createClass({
 },{}],12:[function(require,module,exports){
 
 N = {
-    /**
-     * Creates new tree-formatted object based on parameters
-     */
+
+    //Creates new tree-formatted object based on parameters
     create: function (input) {
         var _node = {
             "name": '',
@@ -1169,14 +1065,30 @@ N = {
         N.arrayN(_categ, _name);
         for (var i in _obj) N.arrayD(_categ).push(N.create(_obj[i]));
     },
+    /**
+     * Uses loadCateg to load all three categories
+     * @param  Array _obj   Array of all three categories to load
+     * @return NULL
+     */
+    loadAll: function (_obj) {
+        mainNode = [];
+        for (var i in _obj) {
+            N.loadCateg(_obj[i].name, _obj[i].data, i);
+        }
+    },
+    //returns all nodes in mainNode[_categ]
+    //sets mainNode[_categ] to _set if passed in
     arrayD: function (_categ, _set) {
         if (_set) mainNode[_categ].data = _set;
         return mainNode[_categ].data;
     },
+    //returns name of mainNode[_categ]
+    //sets name if _set is passed
     arrayN: function (_categ, _set) {
         if (_set) mainNode[_categ].name = _set;
         return mainNode[_categ].name;
     },
+    //returns percent completion of mainNode[index]
     categPercentage: function (index) {
         var c = 0;
         for (var i in N.arrayD(index)) {
@@ -1192,17 +1104,7 @@ N = {
         if (_node.children.length == 0) c *= 2;else for (var i in _node.children) c += N.completion(_node.children[i]) / (2 * _node.children.length);
         return c;
     },
-    /**
-     * Uses loadCateg to load all three categories
-     * @param  Array _obj   Array of all three categories to load
-     * @return NULL
-     */
-    loadAll: function (_obj) {
-        mainNode = [];
-        for (var i in _obj) {
-            N.loadCateg(_obj[i].name, _obj[i].data, i);
-        }
-    },
+
     /**
      * Updates name of object fed, 
      * @param  {[type]} _id   [description]

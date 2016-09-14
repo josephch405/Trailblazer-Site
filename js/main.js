@@ -21,9 +21,8 @@ require("./save.js");
 require("./bgCanvas.js");
 require("./intro.js");
 
-if (typeof window !== 'undefined') {
-    window.React = React;
-}
+
+
 
 //deletes card with ID/sub ID, then SAVES
 delete_card = function(_id) {
@@ -52,8 +51,6 @@ delete_card = function(_id) {
     }
 
     N.saveAll();
-
-    return 1;
 }
 
 //pushes nodeArray(input) to main board, attaches tooltips
@@ -77,30 +74,32 @@ openSettings = function() {
     STATUS.settingsMode = true;
 }
 
+//opens category subpage
 openCat = function() {
     greypage(true);
     catPage(true);
     STATUS.catMode = true;
 }
 
+//expands card and opens "subpage" subpage
 expand_card = function(_id) {
-    STATUS.subpageId = _id;
     greypage(true);
     subpage(true);
     STATUS.subMode = true;
-    //$("#cup_sub_title").val(N.find(_id).name);
-    //
+    STATUS.subpageId = _id;
     N.push();
-    console.log(STATUS.subMode);
-    return -1;
 }
 
+//handle successful login event
 fromLoginToMain = function() {
     $("#login_page").hide();
     storageGet();
 }
 
+//handle logout event
 fromMainToLogin = function() {
+    resetLocalData();
+    N.push();
     $("#login_page").show();
     loginEmail.val("");
     loginPassword.val("");
@@ -121,26 +120,21 @@ returnToMain = function() {
     N.saveAll();
 }
 
-//attaches tooltips to all .box
+//attaches tooltips to all boxes
 attachTooltips = function() {
-    $(".box>.box").tooltip(STYLE.tooltip);
+    $(".box>.box").tooltip(tooltipStyle);
 }
 
-//uses pushCategToBoard, then updates categBar and STATUS
-
-
-//sets greypage display IO
+//sets on/off greypage display
 greypage = function(_in) {
     if (_in) {
         $("#greypage").css("display", "block");
-        //$("#greypage").removeClass("hidden_fade");
     } else {
         $("#greypage").css("display", "none");
-        //$("#greypage").addClass("hidden_fade");
     }
 }
 
-//sets subpage display IO
+//sets on/off subpage display
 subpage = function(_in) {
     if (_in) {
         $("#cup_sub_page").removeClass("hidden_top");
@@ -151,7 +145,7 @@ subpage = function(_in) {
     }
 }
 
-//sets settings display IO
+//sets on/off settings display
 settingsPage = function(_in) {
     if (_in) {
         $("#settings_sub_page").removeClass("hidden_top");
@@ -162,6 +156,7 @@ settingsPage = function(_in) {
     }
 }
 
+//sets on/off categ editor display
 catPage = function(_in) {
     if (_in) {
         $("#cat_sub_page").removeClass("hidden_top");
@@ -172,18 +167,10 @@ catPage = function(_in) {
     }
 }
 
-/**
- * [resetDay description]
- * @return {[type]} [description]
- */
-checkoutNodes = function() {
-    N.evalAll();
-}
-
-$("#bar_bottom").tooltip(STYLE.tooltip);
-
-setBaseOnclicks();
+$("#bar_bottom").tooltip(tooltipStyle);
 
 $(window).load(function() {
     $("#loading_cover").fadeOut("slow");
 });
+
+setBaseOnclicks();
