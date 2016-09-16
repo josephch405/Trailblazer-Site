@@ -13,6 +13,7 @@ S = {
     push: function() {
         S.pushSettings();
         S.updateTaskNB();
+        BGC.updateActiveState();
     },
     updateTaskNB: function() {
         if (STATUS.settings.taskNB) {
@@ -27,7 +28,6 @@ S = {
 
 SettingsPage = React.createClass({
     getInitialState: function() {
-        console.log(this.props);
         return { "data": this.props.data };
     },
     componentWillMount: function() {
@@ -38,7 +38,8 @@ SettingsPage = React.createClass({
     render: function() {
         return (
             <div id="settings_sub">
-	        	<TaskNB val = {this.state.data.taskNB}/>
+	        	<TaskNB val = {this.state.data.taskNB}/><br/>
+                <ActiveBG val = {this.state.data.activeBG}/>
 	        	<br/>
 	        	<div>
 	        		More features coming soon...<br/>
@@ -51,13 +52,11 @@ SettingsPage = React.createClass({
 
 TaskNB = React.createClass({
     handleClickOn: function() {
-        console.log("log");
         STATUS.settings.taskNB = true;
         N.saveAll();
         S.push();
     },
     handleClickOff: function() {
-        console.log("logged");
         STATUS.settings.taskNB = false;
         N.saveAll();
         S.push();
@@ -71,6 +70,30 @@ TaskNB = React.createClass({
 				<div className = {"fade settingsB " + onButClass} onClick = {this.handleClickOn}>On</div>
 				<div className = {"fade settingsB " + offButClass} onClick = {this.handleClickOff}>Off</div>
 			</div>
+        )
+    }
+})
+
+ActiveBG = React.createClass({
+    handleClickOn: function() {
+        STATUS.settings.activeBG = true;
+        storageSet();
+        S.push();
+    },
+    handleClickOff: function() {
+        STATUS.settings.activeBG = false;
+        storageSet();
+        S.push();
+    },
+    render: function() {
+        var onButClass = this.props.val ? "onNow" : "offNow";
+        var offButClass = !this.props.val ? "onNow" : "offNow";
+        return (
+            <div id = "activeBG">
+                <div>Dynamic Background</div>
+                <div className = {"fade settingsB " + onButClass} onClick = {this.handleClickOn}>On</div>
+                <div className = {"fade settingsB " + offButClass} onClick = {this.handleClickOff}>Off</div>
+            </div>
         )
     }
 })

@@ -5,17 +5,20 @@ var ctx = c.getContext("2d");
 
 BGC = {
     points: [],
+    interv: null,
     init: function() {
         ctx.canvas.width = window.innerWidth;
         ctx.canvas.height = window.innerHeight;
         for (var i = 0; i < 40; i++) {
             BGC.add();
         }
+        this.draw();
+        this.updateActiveState();
     },
     add: function() {
         BGC.points.push({
-            x: Math.random() * window.innerWidth*1.2  - window.innerWidth*.1,
-            y: Math.random() * window.innerHeight*1.2 - window.innerHeight*.1,
+            x: Math.random() * window.innerWidth * 1.2 - window.innerWidth * .1,
+            y: Math.random() * window.innerHeight * 1.2 - window.innerHeight * .1,
             vx: Math.random() * 2 - 1,
             vy: Math.random() * 2 - 1
         });
@@ -26,8 +29,6 @@ BGC = {
     draw: function() {
         var numOfPoints = BGC.points.length;
 
-
-        
         if (window.innerWidth != ctx.canvas.width || window.innerHeight != ctx.canvas.height) {
             ctx.canvas.width = window.innerWidth;
             ctx.canvas.height = window.innerHeight;
@@ -68,16 +69,16 @@ BGC = {
                     xDiff = p1.x - p2.x;
                     yDiff = p1.y - p2.y;
 
-                    p1.vx += Math.pow(window.innerWidth / cF - Math.abs(xDiff), 2)/1000000 * xDiff / Math.abs(xDiff);
-                    p2.vx -= Math.pow(window.innerWidth / cF - Math.abs(xDiff), 2)/1000000 * xDiff / Math.abs(xDiff);
-                    p1.vy += Math.pow(window.innerWidth / cF - Math.abs(yDiff), 2)/1000000 * yDiff / Math.abs(yDiff);
-                    p2.vy -= Math.pow(window.innerWidth / cF - Math.abs(yDiff), 2)/1000000 * yDiff / Math.abs(yDiff);
+                    p1.vx += Math.pow(window.innerWidth / cF - Math.abs(xDiff), 2) / 1000000 * xDiff / Math.abs(xDiff);
+                    p2.vx -= Math.pow(window.innerWidth / cF - Math.abs(xDiff), 2) / 1000000 * xDiff / Math.abs(xDiff);
+                    p1.vy += Math.pow(window.innerWidth / cF - Math.abs(yDiff), 2) / 1000000 * yDiff / Math.abs(yDiff);
+                    p2.vy -= Math.pow(window.innerWidth / cF - Math.abs(yDiff), 2) / 1000000 * yDiff / Math.abs(yDiff);
 
                     ctx.lineCap = "round";
                     ctx.beginPath();
                     ctx.moveTo(p1.x, p1.y);
                     ctx.lineTo(p2.x, p2.y);
-                    var alpha = 20*((window.innerWidth / cF) - d) / (window.innerWidth / cF);
+                    var alpha = 20 * ((window.innerWidth / cF) - d) / (window.innerWidth / cF);
                     ctx.strokeStyle = "rgba(150,150,150," + alpha + ")";
                     ctx.lineWidth = 1;
                     ctx.stroke();
@@ -87,9 +88,16 @@ BGC = {
     },
     dist: function(p1, p2) {
         return Math.sqrt(Math.pow((p1.x - p2.x), 2) + Math.pow((p1.y - p2.y), 2));
+    },
+    updateActiveState: function() {
+        console.log("UAS start");
+        console.log(STATUS.settings.activeBG);
+        clearInterval(this.interv);
+        this.interv = setInterval(BGC.draw, 50);
+        if (!STATUS.settings.activeBG){
+            clearInterval(this.interv);
+        }
     }
 }
 
 BGC.init();
-
-BGC.interv = setInterval(BGC.draw, 60);

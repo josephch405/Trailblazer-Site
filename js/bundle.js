@@ -232,12 +232,15 @@ var ctx = c.getContext("2d");
 
 BGC = {
     points: [],
+    interv: null,
     init: function () {
         ctx.canvas.width = window.innerWidth;
         ctx.canvas.height = window.innerHeight;
         for (var i = 0; i < 40; i++) {
             BGC.add();
         }
+        this.draw();
+        this.updateActiveState();
     },
     add: function () {
         BGC.points.push({
@@ -311,12 +314,19 @@ BGC = {
     },
     dist: function (p1, p2) {
         return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+    },
+    updateActiveState: function () {
+        console.log("UAS start");
+        console.log(STATUS.settings.activeBG);
+        clearInterval(this.interv);
+        this.interv = setInterval(BGC.draw, 50);
+        if (!STATUS.settings.activeBG) {
+            clearInterval(this.interv);
+        }
     }
 };
 
 BGC.init();
-
-BGC.interv = setInterval(BGC.draw, 60);
 
 },{}],4:[function(require,module,exports){
 var config = {
@@ -700,7 +710,8 @@ STATUS = {
     "subMode": false,
     "settingsMode": false,
     "settings": {
-        "tasksNB": false
+        "tasksNB": false,
+        "activeBG": true
     }
 };
 
@@ -745,6 +756,7 @@ S = {
     push: function () {
         S.pushSettings();
         S.updateTaskNB();
+        BGC.updateActiveState();
     },
     updateTaskNB: function () {
         if (STATUS.settings.taskNB) {
@@ -761,7 +773,6 @@ SettingsPage = React.createClass({
     displayName: "SettingsPage",
 
     getInitialState: function () {
-        console.log(this.props);
         return { "data": this.props.data };
     },
     componentWillMount: function () {
@@ -774,6 +785,8 @@ SettingsPage = React.createClass({
             "div",
             { id: "settings_sub" },
             React.createElement(TaskNB, { val: this.state.data.taskNB }),
+            React.createElement("br", null),
+            React.createElement(ActiveBG, { val: this.state.data.activeBG }),
             React.createElement("br", null),
             React.createElement(
                 "div",
@@ -795,13 +808,11 @@ TaskNB = React.createClass({
     displayName: "TaskNB",
 
     handleClickOn: function () {
-        console.log("log");
         STATUS.settings.taskNB = true;
         N.saveAll();
         S.push();
     },
     handleClickOff: function () {
-        console.log("logged");
         STATUS.settings.taskNB = false;
         N.saveAll();
         S.push();
@@ -816,6 +827,44 @@ TaskNB = React.createClass({
                 "div",
                 null,
                 "Tasks and Notebook"
+            ),
+            React.createElement(
+                "div",
+                { className: "fade settingsB " + onButClass, onClick: this.handleClickOn },
+                "On"
+            ),
+            React.createElement(
+                "div",
+                { className: "fade settingsB " + offButClass, onClick: this.handleClickOff },
+                "Off"
+            )
+        );
+    }
+});
+
+ActiveBG = React.createClass({
+    displayName: "ActiveBG",
+
+    handleClickOn: function () {
+        STATUS.settings.activeBG = true;
+        storageSet();
+        S.push();
+    },
+    handleClickOff: function () {
+        STATUS.settings.activeBG = false;
+        storageSet();
+        S.push();
+    },
+    render: function () {
+        var onButClass = this.props.val ? "onNow" : "offNow";
+        var offButClass = !this.props.val ? "onNow" : "offNow";
+        return React.createElement(
+            "div",
+            { id: "activeBG" },
+            React.createElement(
+                "div",
+                null,
+                "Dynamic Background"
             ),
             React.createElement(
                 "div",
