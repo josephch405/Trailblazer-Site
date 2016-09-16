@@ -30,12 +30,12 @@ loginPassword.keyup(function() {
 
 btnLogin.click(function() {
     const promise = auth.signInWithEmailAndPassword(loginEmail.val(), loginPassword.val());
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => alert(e.message));
 })
 
 btnRegister.click(function() {
     const promise = auth.createUserWithEmailAndPassword(loginEmail.val(), loginPassword.val());
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => alert(e.message));
 })
 
 btnLogout.click(function() {
@@ -69,6 +69,7 @@ storageSet = function() {
     database.ref('users/' + userId + '/mainNode').set(mainNode);
     database.ref('users/' + userId + '/status').set(STATUS);
     database.ref('users/' + userId + '/taskData').set(taskData);
+    database.ref('users/' + userId + '/nbData').set(nbData);
     database.ref('users/' + userId + '/ver').set(ver);
 }
 
@@ -93,6 +94,7 @@ loadProper = function() {
     ref_mainNode = database.ref('users/' + userId + '/mainNode');
     ref_status = database.ref('users/' + userId + '/status');
     ref_taskData = database.ref('users/' + userId + '/taskData');
+    ref_nbData = database.ref('users/' + userId + '/nbData');
 
     S.render();
     N.render();
@@ -115,5 +117,10 @@ loadProper = function() {
     ref_taskData.on('value', function(snapshot) {
         T.loadAll(snapshot.val());
     })
+
+    ref_nbData.on('value', function(snapshot) {
+        load_nb(snapshot.val());
+    })
+
     console.log("loadProper end");
 }

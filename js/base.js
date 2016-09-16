@@ -14,8 +14,7 @@ bToCClass = function(ticked) {
 
 setBaseOnclicks = function() {
     $('#greypage').click(returnToMain);
-    $('#reset_btn').click(N.evalAll());
-    $('#tutorial').click(openTutorial);
+    $('#reset_btn').click(N.evalAll);
     $('#settings').click(openSettings);
 }
 

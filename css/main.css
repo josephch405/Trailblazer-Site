@@ -340,8 +340,13 @@ div div,
 .slideRight:hover {
   -webkit-transform: translate(89%, 0); }
 
+.slideLeft textarea {
+  display: none; }
+
 .slideLeft:hover {
   -webkit-transform: translate(-89%, 0); }
+  .slideLeft:hover textarea {
+    display: inline; }
 
 .bar {
   box-shadow: 0 0 4px 0 black;

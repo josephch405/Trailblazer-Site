@@ -1,14 +1,11 @@
-
- /*
-save_nb = function() {
-    chrome.storage.sync.set({ 'notebook': $('#nbarea').val() }, function() {});
-}
-*/
+nbData = "";
 
 load_nb = function(result) {
+	nbData = result;
     $('#nbarea').val(result);
 }
 
 $("#nbarea").keyup(function() {
-    save_nb();
+	nbData = $('#nbarea').val();
+    storageSet();
 });

@@ -1,6 +1,6 @@
 T = {
     saveAll: function() {
-        chrome.storage.local.set({ 'taskData': taskData }, function() {});
+        storageSet();
     },
 
     loadAll: function(_obj) {

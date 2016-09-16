@@ -266,6 +266,7 @@ div div,
     top: 8%;
     left: 2%;
     overflow: hidden;
+    
 }
 
 #cup_sub {
@@ -411,8 +412,15 @@ div div,
     -webkit-transform: translate(89%, 0);
 }
 
+.slideLeft textarea{
+    display:none;
+}
+
 .slideLeft:hover {
     -webkit-transform: translate(-89%, 0);
+    textarea{
+        display:inline;
+    }
 }
 
 .bar {

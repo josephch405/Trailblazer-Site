@@ -176,8 +176,7 @@ bToCClass = function (ticked) {
 
 setBaseOnclicks = function () {
     $('#greypage').click(returnToMain);
-    $('#reset_btn').click(N.evalAll());
-    $('#tutorial').click(openTutorial);
+    $('#reset_btn').click(N.evalAll);
     $('#settings').click(openSettings);
 };
 
@@ -352,12 +351,12 @@ loginPassword.keyup(function () {
 
 btnLogin.click(function () {
     const promise = auth.signInWithEmailAndPassword(loginEmail.val(), loginPassword.val());
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => alert(e.message));
 });
 
 btnRegister.click(function () {
     const promise = auth.createUserWithEmailAndPassword(loginEmail.val(), loginPassword.val());
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => alert(e.message));
 });
 
 btnLogout.click(function () {
@@ -390,6 +389,7 @@ storageSet = function () {
     database.ref('users/' + userId + '/mainNode').set(mainNode);
     database.ref('users/' + userId + '/status').set(STATUS);
     database.ref('users/' + userId + '/taskData').set(taskData);
+    database.ref('users/' + userId + '/nbData').set(nbData);
     database.ref('users/' + userId + '/ver').set(ver);
 };
 
@@ -414,6 +414,7 @@ loadProper = function () {
     ref_mainNode = database.ref('users/' + userId + '/mainNode');
     ref_status = database.ref('users/' + userId + '/status');
     ref_taskData = database.ref('users/' + userId + '/taskData');
+    ref_nbData = database.ref('users/' + userId + '/nbData');
 
     S.render();
     N.render();
@@ -435,6 +436,11 @@ loadProper = function () {
     ref_taskData.on('value', function (snapshot) {
         T.loadAll(snapshot.val());
     });
+
+    ref_nbData.on('value', function (snapshot) {
+        load_nb(snapshot.val());
+    });
+
     console.log("loadProper end");
 };
 
@@ -645,19 +651,16 @@ $(window).load(function () {
 setBaseOnclicks();
 
 },{"./base.js":2,"./bgCanvas.js":3,"./fbase.js":4,"./intro.js":5,"./notebook.js":7,"./params.js":8,"./save.js":9,"./settings.js":10,"./task.js":11,"./tree.js":12,"firebase":13,"lodash":15,"react":185,"react-dom":16}],7:[function(require,module,exports){
-
-/*
-save_nb = function() {
-   chrome.storage.sync.set({ 'notebook': $('#nbarea').val() }, function() {});
-}
-*/
+nbData = "";
 
 load_nb = function (result) {
-    $('#nbarea').val(result);
+  nbData = result;
+  $('#nbarea').val(result);
 };
 
 $("#nbarea").keyup(function () {
-    save_nb();
+  nbData = $('#nbarea').val();
+  storageSet();
 });
 
 },{}],8:[function(require,module,exports){
@@ -831,7 +834,7 @@ TaskNB = React.createClass({
 },{}],11:[function(require,module,exports){
 T = {
     saveAll: function () {
-        chrome.storage.local.set({ 'taskData': taskData }, function () {});
+        storageSet();
     },
 
     loadAll: function (_obj) {
@@ -853,7 +856,7 @@ T = {
 taskData = [];
 
 TaskList = React.createClass({
-    displayName: 'TaskList',
+    displayName: "TaskList",
 
     render: function () {
         var taskNodes = !this.props.data ? "" : this.props.data.map(function (task) {
@@ -863,24 +866,24 @@ TaskList = React.createClass({
         });
 
         return React.createElement(
-            'table',
-            { id: 'taskTable' },
+            "table",
+            { id: "taskTable" },
             React.createElement(
-                'tbody',
+                "tbody",
                 null,
                 taskNodes
             ),
             React.createElement(
-                'tfoot',
+                "tfoot",
                 null,
                 React.createElement(
-                    'tr',
+                    "tr",
                     null,
-                    React.createElement('td', null),
+                    React.createElement("td", null),
                     React.createElement(
-                        'td',
+                        "td",
                         null,
-                        ' ',
+                        " ",
                         React.createElement(AddTask, null)
                     )
                 )
@@ -890,16 +893,16 @@ TaskList = React.createClass({
 });
 
 Task = React.createClass({
-    displayName: 'Task',
+    displayName: "Task",
 
     render: function () {
         return React.createElement(
-            'tr',
-            { className: 'task' },
+            "tr",
+            { className: "task" },
             React.createElement(TaskDelete, this.props),
             React.createElement(
-                'td',
-                { className: 'taskName' },
+                "td",
+                { className: "taskName" },
                 React.createElement(TaskName, this.props)
             ),
             React.createElement(TaskChecked, this.props)
@@ -908,7 +911,7 @@ Task = React.createClass({
 });
 
 TaskName = React.createClass({
-    displayName: 'TaskName',
+    displayName: "TaskName",
 
     getInitialState: function () {
         return { value: this.props.text };
@@ -921,15 +924,15 @@ TaskName = React.createClass({
         //then pushes to storage
     },
     render: function () {
-        return React.createElement('input', {
-            maxLength: '30',
+        return React.createElement("input", {
+            maxLength: "30",
             value: this.state.value,
             onChange: this.handleChange });
     }
 });
 
 TaskChecked = React.createClass({
-    displayName: 'TaskChecked',
+    displayName: "TaskChecked",
 
     getInitialState: function () {
         return { check: false };
@@ -945,12 +948,12 @@ TaskChecked = React.createClass({
     render: function () {
         var a = bToCClass(this.state.check);
         a += " taskCheck";
-        return React.createElement('td', { className: a, onClick: this.handleClick });
+        return React.createElement("td", { className: a, onClick: this.handleClick });
     }
 });
 
 TaskDelete = React.createClass({
-    displayName: 'TaskDelete',
+    displayName: "TaskDelete",
 
     handleClick: function (event) {
         var ind = findIndexById(taskData, this.props.id);
@@ -959,12 +962,12 @@ TaskDelete = React.createClass({
         T.render();
     },
     render: function () {
-        return React.createElement('td', { className: 'taskDelete', onClick: this.handleClick });
+        return React.createElement("td", { className: "taskDelete", onClick: this.handleClick });
     }
 });
 
 AddTask = React.createClass({
-    displayName: 'AddTask',
+    displayName: "AddTask",
 
     handleClick: function (event) {
         taskData.push({
@@ -976,7 +979,7 @@ AddTask = React.createClass({
         T.render();
     },
     render: function () {
-        return React.createElement('img', { className: 'addTask', onClick: this.handleClick, src: '..\\img\\plus.png' });
+        return React.createElement("img", { className: "addTask", onClick: this.handleClick, src: "..\\img\\plus.png" });
     }
 });
 
@@ -1342,7 +1345,7 @@ SubNameInput = React.createClass({
         N.push();
     },
     render: function () {
-        return React.createElement("input", { value: this.props.value, type: "text", className: "cup_title", id: "cup_sub_title", maxLength: "20", onChange: this.handleChange });
+        return React.createElement("input", { value: this.props.value, type: "text", autoComplete: "off", className: "cup_title", id: "cup_sub_title", maxLength: "20", onChange: this.handleChange });
     }
 });
 

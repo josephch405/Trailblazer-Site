@@ -405,7 +405,7 @@ SubNameInput = React.createClass({
     },
     render: function() {
         return (
-            <input value = {this.props.value} type = "text" className="cup_title" id="cup_sub_title" maxLength="20" onChange = {this.handleChange}/>
+            <input value = {this.props.value} type = "text" autoComplete = "off" className="cup_title" id="cup_sub_title" maxLength="20" onChange = {this.handleChange}/>
         )
     } 
 });
