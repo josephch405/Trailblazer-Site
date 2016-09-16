@@ -52,5 +52,5 @@ node_modules/
 production/
 *.docx
 
-.sublime-project
-.sublime-workspace
+*.sublime-project
+*.sublime-workspace
