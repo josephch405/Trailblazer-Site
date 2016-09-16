@@ -48,6 +48,9 @@ Temporary Items
 
 .sass-cache/
 node_modules/
-node_modules/babel-preset-react/
+node_modules/
 production/
 *.docx
+
+.sublime-project
+.sublime-workspace
