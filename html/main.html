@@ -7,6 +7,7 @@
 </title>
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link rel="stylesheet" href="..\css\jquery-ui.css">
     <link rel="stylesheet" href="..\css\main.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -17,12 +18,13 @@
     <div id="loading_cover"></div>
     <div id="tutorial_page">
         <div id="tut_1">
-            Hello.<br>
-            We are here to help.<br>
+            <h1>Hello.</h1>
+            <h2>We are here to help.</h2><br>
             <a onclick = "introNext()" href="#">Next</a>
         </div>
         <div id="tut_2">
-            What overarching life goals do you have?
+            <h2>What do you want to work on?</h2>
+            <div id = "introSelection"></div>
             <a onclick = "introNext()" href="#">Next</a>
         </div>
         <div id="tut_3">

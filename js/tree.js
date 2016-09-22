@@ -1,4 +1,3 @@
-
 N = {
     
     //Creates new tree-formatted object based on parameters

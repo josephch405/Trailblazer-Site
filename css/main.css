@@ -113,8 +113,8 @@ div div,
   box-shadow: 0 0 .5vh 0;
   width: 16.5vw;
   height: 46%;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  margin-top: 1%;
+  margin-bottom: 1%;
   margin-left: 0.5vw;
   margin-right: 0.5vw; }
   .card * {
@@ -188,8 +188,8 @@ div div,
 
 #cup_sub_page {
   width: 74vw;
-  height: 86%;
-  top: 5%;
+  height: 98%;
+  top: 3%;
   left: 12vw;
   background-color: #FFFFFF;
   box-shadow: 0 0 10px 0 #000000;
@@ -225,7 +225,7 @@ div div,
 
 #cup_sub {
   width: 96%;
-  height: 80%;
+  height: 82%;
   top: 15%;
   left: 2%;
   overflow: hidden; }
@@ -575,15 +575,61 @@ div div,
   height: 100vh;
   z-index: 100;
   position: absolute;
-  font-size: 3vh;
-  text-align: center; }
+  font-size: 3vh; }
   #tutorial_page > div {
-    width: 60vw;
+    width: 80vw;
     height: 80vh;
     top: 10vh;
-    left: 20vw; }
+    left: 10vw; }
+  #tutorial_page h1,
+  #tutorial_page h2 {
+    font-family: Arvo;
+    margin-bottom: 5vh; }
+  #tutorial_page h1 {
+    font-size: 10vh; }
   #tutorial_page a {
     text-decoration: none;
-    background-color: #FFA200; }
+    background-color: #FFA200;
+    padding: 3vh;
+    color: white; }
+    #tutorial_page a:hover {
+      background-color: #FFB533; }
+  #tutorial_page #introSelection {
+    position: static;
+    height: 70%; }
+    #tutorial_page #introSelection .introCateg {
+      display: inline-block;
+      width: 16vw; }
+    #tutorial_page #introSelection li {
+      padding: 1vh;
+      background-color: white;
+      font-size: 3vh;
+      border: solid #AAAAAA;
+      border-width: 2px 2px 0 0;
+      display: none; }
+    #tutorial_page #introSelection .expand li {
+      display: list-item; }
+      #tutorial_page #introSelection .expand li:hover {
+        background-color: #EEEEEE; }
+    #tutorial_page #introSelection .expand .selected {
+      background-color: #CCCCCC; }
+      #tutorial_page #introSelection .expand .selected:hover {
+        background-color: #DDDDDD !important; }
+    #tutorial_page #introSelection li:first-child {
+      background-color: #FFA200 !important;
+      color: white;
+      font-size: 4vh;
+      display: list-item; }
+      #tutorial_page #introSelection li:first-child:hover {
+        background-color: #FFB533 !important; }
+    #tutorial_page #introSelection ul {
+      padding: 0;
+      list-style-type: none;
+      margin: 0 0 1vh 5vh;
+      border: solid #AAAAAA;
+      border-width: 0 0 2px 2px;
+      vertical-align: top; }
+  #tutorial_page #tut_2 a {
+    float: right; }
 
 /*# sourceMappingURL=main.css.map */
