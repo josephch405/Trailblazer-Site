@@ -53,7 +53,8 @@ resetLocalData = function() {
         "subMode": false,
         "settingsMode": false,
         "settings": {
-            "tasksNB": false
+            "tasksNB": false,
+            "activeBG": true
         }
     };
 

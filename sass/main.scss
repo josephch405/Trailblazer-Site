@@ -722,6 +722,9 @@ div div,
         }
     }
     #introSelection {
+        #introCategPage{
+            width:74vw;
+        }
         position: static;
         height: 70%;
         .introCateg {
@@ -762,7 +765,7 @@ div div,
         ul {
             padding: 0;
             list-style-type: none;
-            margin: 0 0 1vh 5vh;
+            margin: 0 0 1vh 2vw;
             border: solid #AAAAAA;
             border-width: 0 0 2px 2px;
             vertical-align: top;
@@ -770,5 +773,6 @@ div div,
     }
     #tut_2 a {
         float: right;
+        z-index: 100;
     }
 }

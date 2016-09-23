@@ -215,7 +215,8 @@ resetLocalData = function () {
         "subMode": false,
         "settingsMode": false,
         "settings": {
-            "tasksNB": false
+            "tasksNB": false,
+            "activeBG": true
         }
     };
 
@@ -459,6 +460,9 @@ tutCurrentSlide = 1;
 
 initIntro = function () {
     console.log("initIntro begin");
+    tutCurrentSlide = 1;
+    introCategs = [[["Work", false], ["Client communication", false], ["Sales", false], ["Next meeting", false], ["Professional dev", false]], [["School", false], ["Math", false], ["English", false], ["Physics", false], ["Chemistry", false]], [["Lifestyle", false], ["Sleep", false], ["Clean", false], ["Meditate", false], ["Exercise", false]], [["Learning", false], ["Foreign Language", false], ["Technology", false], ["Code", false], ["News", false]], [["Culture", false], ["Drawing", false], ["Sculpting", false], ["Music", false]], [["Finances", false], ["Investing", false], ["Budgeting", false], ["Debt", false]], [["Social", false], ["Clubs", false], ["Church", false], ["Chat", false]]];
+
     $("#tutorial_page").fadeIn(200);
     $("#tut_1").fadeIn(200);
     $("#tut_2").hide();
@@ -483,6 +487,9 @@ introNext = function () {
         switch (tutCurrentSlide) {
             case 2:
                 renderIntro2();
+                break;
+            case 3:
+                pushIntroCategsToMain();
         }
     } else {
         if (mainNode.length == 0) {
@@ -491,15 +498,37 @@ introNext = function () {
                 data: []
             });
         };
+        $("#tutorial_page").fadeOut(200);
         N.saveAll();
         N.render();
-        $("#tutorial_page").fadeOut(200);
+        setTimeout(N.push(), 200);
     }
 };
 
 introCategClick = function (p, c) {
     introCategs[p][c][1] = !introCategs[p][c][1];
     renderIntro2();
+};
+
+pushIntroCategsToMain = function () {
+    mainNode = [];
+    for (var i in introCategs) {
+        if (introCategs[i][0][1]) {
+            //push this categ
+            var k = introCategs[i];
+            mainNode.push({
+                name: k[0][0],
+                data: []
+            });
+
+            for (var ii = 1; ii < k.length; ii++) {
+                if (k[ii][1]) {
+                    var _id = N.nextId();
+                    N.arrayD(mainNode.length - 1).push(N.create({ "name": k[ii][0], "id": _id }));
+                }
+            }
+        }
+    }
 };
 
 IntroCategPage = React.createClass({
@@ -1750,6 +1779,7 @@ CatEditor = React.createClass({
     }
 });
 
+//represents categ in CatEditor
 CatEBar = React.createClass({
     displayName: "CatEBar",
 

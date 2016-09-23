@@ -658,6 +658,7 @@ CatEditor = React.createClass({
     }
 })
 
+//represents categ in CatEditor
 CatEBar = React.createClass({
     render: function() {
         return (
