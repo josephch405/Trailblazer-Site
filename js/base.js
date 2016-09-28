@@ -11,7 +11,6 @@ bToCClass = function(ticked) {
     return 'but_orange';
 }
 
-
 setBaseOnclicks = function() {
     $('#greypage').click(returnToMain);
     $('#reset_btn').click(N.evalAll);
@@ -60,8 +59,5 @@ resetLocalData = function() {
 
     mainNode = [
         { "name": "Group 1", "data": [] }
-        /*,
-            { "name": "Hobbies", "data": [] },
-            { "name": "Habits", "data": [] }*/
     ];
 }

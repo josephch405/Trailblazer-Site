@@ -22,15 +22,7 @@ initIntro = function() {
     console.log("initIntro end");
 }
 
-introCategs = [
-    [["Work", false], ["Client communication", false], ["Sales", false], ["Next meeting", false], ["Professional dev", false]],
-    [["School", false], ["Math", false], ["English", false], ["Physics", false], ["Chemistry", false]],
-    [["Lifestyle", false], ["Sleep", false], ["Clean", false], ["Meditate", false], ["Exercise", false]],
-    [["Learning", false], ["Foreign Language", false], ["Technology", false], ["Code", false], ["News", false]] ,
-    [["Culture", false], ["Drawing", false], ["Sculpting", false], ["Music", false]],
-    [["Finances", false], ["Investing", false], ["Budgeting", false], ["Debt", false]],
-    [["Social", false], ["Clubs", false], ["Church", false], ["Chat", false]]
-]
+introCategs = []
 
 renderIntro2 = function(){
     ReactDOM.render(

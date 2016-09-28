@@ -3,12 +3,9 @@
  * for (more or less) static objects
  */
 
-/**
- * Styling object for colors, lines, partition styles
- * @type {Object}
- */
-
 ver = 1;
+
+//Styling object for colors, lines, partition styles
 
 tooltipStyle = {
     position: {
@@ -24,10 +21,6 @@ tooltipStyle = {
     }
 }
 
-/**
- * Status object for tracking user states
- * @type {Object}
- */
 STATUS = {
     "categ": 0,
     "subpageId": -1,
@@ -41,7 +34,4 @@ STATUS = {
 
 mainNode = [
     { "name": "Group 1", "data": [] }
-    /*,
-        { "name": "Hobbies", "data": [] },
-        { "name": "Habits", "data": [] }*/
 ];

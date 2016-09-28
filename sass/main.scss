@@ -279,14 +279,17 @@ div div,
     @include size(40%, 15%);
     position: absolute;
     top: 0;
-    left: 18vw;
+    left: 20vw;
     overflow: hidden;
     font-size: 5vh;
     padding: 2%;
     border: none;
     outline: none;
-    background-color: "rgba(0,0,0,0)";
+    background-color: rgba(0,0,0,0);
     color: #000000;
+    &:hover{
+        background-color: #F0F0F0;
+    }
 }
 
 #arrowOut {
@@ -510,7 +513,7 @@ div div,
 }
 
 .nn > div:first-child {
-    border-left: solid .5vw #FFFFFF;
+    border-left: solid .5vw rgba(255, 255, 255, 0);
 }
 
 .rn > div:first-child {
@@ -555,15 +558,19 @@ div div,
     box-shadow: 0px 2px 2px -2px;
     z-index: 3;
     border-bottom: solid 1px #A3A3A3;
-}
-
-.card_t input {
-    height: 100%;
-    text-align: center;
-    padding-top: 0%;
-    width: 96%;
-    border: none;
-    outline: none
+    background-color: #FFFFFF;
+    &:hover {
+        background-color: #F0F0F0;
+    }
+    input {
+        height: 100%;
+        text-align: center;
+        padding-top: 0%;
+        width: 96%;
+        border: none;
+        outline: none;
+        background: none;
+    }
 }
 
 .card_ctrl {
@@ -641,11 +648,15 @@ div div,
         height: 4vh;
         width: 20vw;
         font-size: 4vh;
+        &:hover {
+            background-color: #F0F0F0;
+        }
     }
     .catEDelete {
         background-color: #FF0000;
         width: 4vh;
         height: 4vh;
+        margin: .5vh;
         &:hover {
             background-color: #FF6868;
         }
@@ -717,13 +728,13 @@ div div,
         background-color: #FFA200;
         padding: 3vh;
         color: white;
-        &:hover{
+        &:hover {
             background-color: #FFB533;
         }
     }
     #introSelection {
-        #introCategPage{
-            width:74vw;
+        #introCategPage {
+            width: 74vw;
         }
         position: static;
         height: 70%;
@@ -758,7 +769,7 @@ div div,
             color: white;
             font-size: 4vh;
             display: list-item;
-            &:hover{
+            &:hover {
                 background-color: #FFB533 !important;
             }
         }

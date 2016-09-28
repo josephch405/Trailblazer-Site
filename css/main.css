@@ -235,14 +235,16 @@ div div,
   height: 15%;
   position: absolute;
   top: 0;
-  left: 18vw;
+  left: 20vw;
   overflow: hidden;
   font-size: 5vh;
   padding: 2%;
   border: none;
   outline: none;
-  background-color: "rgba(0,0,0,0)";
+  background-color: transparent;
   color: #000000; }
+  #cup_sub_title:hover {
+    background-color: #F0F0F0; }
 
 #arrowOut {
   width: 6vw;
@@ -421,7 +423,7 @@ div div,
   border-left: solid .5vw #A1FFA0; }
 
 .nn > div:first-child {
-  border-left: solid .5vw #FFFFFF; }
+  border-left: solid 0.5vw rgba(255, 255, 255, 0); }
 
 .rn > div:first-child {
   border-left: solid .5vw #FFA0A0; }
@@ -460,15 +462,18 @@ div div,
   height: 20%;
   box-shadow: 0px 2px 2px -2px;
   z-index: 3;
-  border-bottom: solid 1px #A3A3A3; }
-
-.card_t input {
-  height: 100%;
-  text-align: center;
-  padding-top: 0%;
-  width: 96%;
-  border: none;
-  outline: none; }
+  border-bottom: solid 1px #A3A3A3;
+  background-color: #FFFFFF; }
+  .card_t:hover {
+    background-color: #F0F0F0; }
+  .card_t input {
+    height: 100%;
+    text-align: center;
+    padding-top: 0%;
+    width: 96%;
+    border: none;
+    outline: none;
+    background: none; }
 
 .card_ctrl {
   width: 5%;
@@ -532,10 +537,13 @@ div div,
     height: 4vh;
     width: 20vw;
     font-size: 4vh; }
+    #cat_sub input:hover {
+      background-color: #F0F0F0; }
   #cat_sub .catEDelete {
     background-color: #FF0000;
     width: 4vh;
-    height: 4vh; }
+    height: 4vh;
+    margin: .5vh; }
     #cat_sub .catEDelete:hover {
       background-color: #FF6868; }
   #cat_sub #AddCat {

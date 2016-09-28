@@ -23,7 +23,6 @@ require("./intro.js");
 
 
 
-
 //deletes card with ID/sub ID, then SAVES
 delete_card = function(_id) {
     var done = false;
@@ -90,11 +89,6 @@ expand_card = function(_id) {
     N.push();
 }
 
-//handle successful login event
-fromLoginToMain = function() {
-    $("#login_page").hide();
-    storageGet();
-}
 
 //handle logout event
 fromMainToLogin = function() {

@@ -1,11 +1,18 @@
+//
+//  FBASE
+//  All things Firebase Related
+//
+
+//
+//  VARIABLES
+//
+
 var config = {
     apiKey: "AIzaSyBBhR0vk7c0kAGVl0qcRaIQC04s5_P_CRQ",
     authDomain: "trailblazer-1cc82.firebaseapp.com",
     databaseURL: "https://trailblazer-1cc82.firebaseio.com",
     storageBucket: "trailblazer-1cc82.appspot.com"
 };
-
-firebase.initializeApp(config);
 
 loginEmail = $("#loginEmail");
 loginPassword = $("#loginPassword");
@@ -20,24 +27,27 @@ ref_mainNode = null;
 ref_taskData = null;
 ref_status = null;
 
+firebase.initializeApp(config);
 const auth = firebase.auth();
+const database = firebase.database();
+
+//
+//  DOM PREPPING FUNCTIONS
+//
 
 loginPassword.keyup(function() {
     if (event.keyCode == 13) {
         btnLogin.click();
     }
 });
-
 btnLogin.click(function() {
     const promise = auth.signInWithEmailAndPassword(loginEmail.val(), loginPassword.val());
     promise.catch(e => alert(e.message));
 })
-
 btnRegister.click(function() {
     const promise = auth.createUserWithEmailAndPassword(loginEmail.val(), loginPassword.val());
     promise.catch(e => alert(e.message));
 })
-
 btnLogout.click(function() {
     const promise = firebase.auth().signOut().then(function() {
         fromMainToLogin();
@@ -47,12 +57,18 @@ btnLogout.click(function() {
 
 })
 
+//
+//  STATE FUNCTIONS
+//
+
+//listens to firebase login change, then either starts logging in or out
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         console.log(user);
         userStatus = user;
         userId = userStatus.uid;
-        fromLoginToMain();
+        $("#login_page").hide();
+        storageGet();
     } else {
         console.log("not logged in");
         userStatus = null;
@@ -63,8 +79,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
-const database = firebase.database();
-
+//sets all firebase storage according to current user state
 storageSet = function() {
     database.ref('users/' + userId + '/mainNode').set(mainNode);
     database.ref('users/' + userId + '/status').set(STATUS);
@@ -73,6 +88,8 @@ storageSet = function() {
     database.ref('users/' + userId + '/ver').set(ver);
 }
 
+//determines whether to start introduction (new user), load properly (typical), 
+//or update storage format (if user ver < current)
 storageGet = function() {
     console.log("storageSet begin");
     database.ref('/users/' + userId + '/ver').once('value').then(function(snapshot) {
@@ -89,6 +106,8 @@ storageGet = function() {
     console.log("storageSet end");
 }
 
+//loads data from database into user state, pushes accordingly
+//links storage change listeners
 loadProper = function() {
     console.log("loadProper begin");
     ref_mainNode = database.ref('users/' + userId + '/mainNode');
@@ -102,14 +121,13 @@ loadProper = function() {
     ref_mainNode.on('value', function(snapshot) {
         N.loadAll(snapshot.val());
         N.push();
-        STATUS.categ = Math.min(Math.max(STATUS.categ, 0), mainNode.length - 1);
-
+        STATUS.categ = clampNum(0, STATUS.categ, mainNode.length - 1);
     })
 
     ref_status.on('value', function(snapshot) {
         //prune STATUS to eliminate incompatability
         STATUS = snapshot.val();
-        STATUS.categ = Math.min(Math.max(STATUS.categ, 0), mainNode.length - 1);
+        STATUS.categ = clampNum(0, STATUS.categ, mainNode.length - 1);
         S.push();
         N.push();
     })

@@ -39,14 +39,16 @@ N = {
             return _id;
         }
         if (_.isArray(_reference)) {
-            //propogate search through array
+            //CASE: _reference is an array
+            //propogate search through _reference
             for (var i in _reference) {
                 var obj1 = N.find(_id, _reference[i]);
                 if (obj1 != -1)
                     return obj1;
             }
         } else if (typeof _reference == "object") {
-            //either return object, or propogate search downwards
+            //CASE: _reference is an object
+            //search through the reference itself OR its children
             if (_reference.id == _id)
                 return _reference;
             for (var j in _reference.children) {
@@ -56,7 +58,8 @@ N = {
             }
             return -1;
         } else {
-            //initial call, start in mainNode
+            //CASE: no valid _reference
+            //initial call, start search in mainNode then propogate down
             for (var k in mainNode) {
                 var _array = N.arrayD(k);
                 var obj3 = N.find(_id, _array);
@@ -64,33 +67,26 @@ N = {
                     return obj3;
             }
         }
+        //CASE: nothing found within given params
         return -1;
     },
     /**
      * Saves mainNode and STATUS to storage
      * @return NULL
+     * TODO: Consider replacing with just a global save function
      */
     saveAll: function() {
         storageSet();
     },
-    /**
-     * [loadCateg description]
-     * @param  {[type]} _name  [description]
-     * @param  {[type]} _obj   [description]
-     * @param  {[type]} _index [description]
-     * @return {[type]}        [description]
-     */
-    loadCateg: function(_name, _obj, _categ) {
-        mainNode[_categ] = { "name": "", "data": [] };
-        N.arrayN(_categ, _name);
+    //loads category given a name, dataset and index in main
+    //populates category with node objects while doing so
+    loadCateg: function(_name, _obj, _index) {
+        mainNode[_index] = { "name": "", "data": [] };
+        N.arrayN(_index, _name);
         for (var i in _obj)
-            N.arrayD(_categ).push(N.create(_obj[i]));
+            N.arrayD(_index).push(N.create(_obj[i]));
     },
-    /**
-     * Uses loadCateg to load all three categories
-     * @param  Array _obj   Array of all three categories to load
-     * @return NULL
-     */
+    //Uses loadCateg to load all categories
     loadAll: function(_obj) {
         mainNode = [];
         for (var i in _obj) {

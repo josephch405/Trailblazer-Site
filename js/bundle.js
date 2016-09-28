@@ -220,11 +220,7 @@ resetLocalData = function () {
         }
     };
 
-    mainNode = [{ "name": "Group 1", "data": [] }
-    /*,
-        { "name": "Hobbies", "data": [] },
-        { "name": "Habits", "data": [] }*/
-    ];
+    mainNode = [{ "name": "Group 1", "data": [] }];
 };
 
 },{}],3:[function(require,module,exports){
@@ -330,14 +326,21 @@ BGC = {
 BGC.init();
 
 },{}],4:[function(require,module,exports){
+//
+//  FBASE
+//  All things Firebase Related
+//
+
+//
+//  VARIABLES
+//
+
 var config = {
     apiKey: "AIzaSyBBhR0vk7c0kAGVl0qcRaIQC04s5_P_CRQ",
     authDomain: "trailblazer-1cc82.firebaseapp.com",
     databaseURL: "https://trailblazer-1cc82.firebaseio.com",
     storageBucket: "trailblazer-1cc82.appspot.com"
 };
-
-firebase.initializeApp(config);
 
 loginEmail = $("#loginEmail");
 loginPassword = $("#loginPassword");
@@ -352,24 +355,27 @@ ref_mainNode = null;
 ref_taskData = null;
 ref_status = null;
 
+firebase.initializeApp(config);
 const auth = firebase.auth();
+const database = firebase.database();
+
+//
+//  DOM PREPPING FUNCTIONS
+//
 
 loginPassword.keyup(function () {
     if (event.keyCode == 13) {
         btnLogin.click();
     }
 });
-
 btnLogin.click(function () {
     const promise = auth.signInWithEmailAndPassword(loginEmail.val(), loginPassword.val());
     promise.catch(e => alert(e.message));
 });
-
 btnRegister.click(function () {
     const promise = auth.createUserWithEmailAndPassword(loginEmail.val(), loginPassword.val());
     promise.catch(e => alert(e.message));
 });
-
 btnLogout.click(function () {
     const promise = firebase.auth().signOut().then(function () {
         fromMainToLogin();
@@ -378,12 +384,18 @@ btnLogout.click(function () {
     });
 });
 
+//
+//  STATE FUNCTIONS
+//
+
+//listens to firebase login change, then either starts logging in or out
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         console.log(user);
         userStatus = user;
         userId = userStatus.uid;
-        fromLoginToMain();
+        $("#login_page").hide();
+        storageGet();
     } else {
         console.log("not logged in");
         userStatus = null;
@@ -394,8 +406,7 @@ firebase.auth().onAuthStateChanged(user => {
     }
 });
 
-const database = firebase.database();
-
+//sets all firebase storage according to current user state
 storageSet = function () {
     database.ref('users/' + userId + '/mainNode').set(mainNode);
     database.ref('users/' + userId + '/status').set(STATUS);
@@ -404,6 +415,8 @@ storageSet = function () {
     database.ref('users/' + userId + '/ver').set(ver);
 };
 
+//determines whether to start introduction (new user), load properly (typical), 
+//or update storage format (if user ver < current)
 storageGet = function () {
     console.log("storageSet begin");
     database.ref('/users/' + userId + '/ver').once('value').then(function (snapshot) {
@@ -420,6 +433,8 @@ storageGet = function () {
     console.log("storageSet end");
 };
 
+//loads data from database into user state, pushes accordingly
+//links storage change listeners
 loadProper = function () {
     console.log("loadProper begin");
     ref_mainNode = database.ref('users/' + userId + '/mainNode');
@@ -433,13 +448,13 @@ loadProper = function () {
     ref_mainNode.on('value', function (snapshot) {
         N.loadAll(snapshot.val());
         N.push();
-        STATUS.categ = Math.min(Math.max(STATUS.categ, 0), mainNode.length - 1);
+        STATUS.categ = clampNum(0, STATUS.categ, mainNode.length - 1);
     });
 
     ref_status.on('value', function (snapshot) {
         //prune STATUS to eliminate incompatability
         STATUS = snapshot.val();
-        STATUS.categ = Math.min(Math.max(STATUS.categ, 0), mainNode.length - 1);
+        STATUS.categ = clampNum(0, STATUS.categ, mainNode.length - 1);
         S.push();
         N.push();
     });
@@ -472,7 +487,7 @@ initIntro = function () {
     console.log("initIntro end");
 };
 
-introCategs = [[["Work", false], ["Client communication", false], ["Sales", false], ["Next meeting", false], ["Professional dev", false]], [["School", false], ["Math", false], ["English", false], ["Physics", false], ["Chemistry", false]], [["Lifestyle", false], ["Sleep", false], ["Clean", false], ["Meditate", false], ["Exercise", false]], [["Learning", false], ["Foreign Language", false], ["Technology", false], ["Code", false], ["News", false]], [["Culture", false], ["Drawing", false], ["Sculpting", false], ["Music", false]], [["Finances", false], ["Investing", false], ["Budgeting", false], ["Debt", false]], [["Social", false], ["Clubs", false], ["Church", false], ["Chat", false]]];
+introCategs = [];
 
 renderIntro2 = function () {
     ReactDOM.render(React.createElement(IntroCategPage, { data: introCategs }), document.getElementById('introSelection'));
@@ -673,12 +688,6 @@ expand_card = function (_id) {
     N.push();
 };
 
-//handle successful login event
-fromLoginToMain = function () {
-    $("#login_page").hide();
-    storageGet();
-};
-
 //handle logout event
 fromMainToLogin = function () {
     resetLocalData();
@@ -777,12 +786,9 @@ $("#nbarea").keyup(function () {
  * for (more or less) static objects
  */
 
-/**
- * Styling object for colors, lines, partition styles
- * @type {Object}
- */
-
 ver = 1;
+
+//Styling object for colors, lines, partition styles
 
 tooltipStyle = {
     position: {
@@ -798,10 +804,6 @@ tooltipStyle = {
     }
 };
 
-/**
- * Status object for tracking user states
- * @type {Object}
- */
 STATUS = {
     "categ": 0,
     "subpageId": -1,
@@ -813,11 +815,7 @@ STATUS = {
     }
 };
 
-mainNode = [{ "name": "Group 1", "data": [] }
-/*,
-    { "name": "Hobbies", "data": [] },
-    { "name": "Habits", "data": [] }*/
-];
+mainNode = [{ "name": "Group 1", "data": [] }];
 
 },{}],9:[function(require,module,exports){
 exportAll = function () {
@@ -1172,13 +1170,15 @@ N = {
             return _id;
         }
         if (_.isArray(_reference)) {
-            //propogate search through array
+            //CASE: _reference is an array
+            //propogate search through _reference
             for (var i in _reference) {
                 var obj1 = N.find(_id, _reference[i]);
                 if (obj1 != -1) return obj1;
             }
         } else if (typeof _reference == "object") {
-            //either return object, or propogate search downwards
+            //CASE: _reference is an object
+            //search through the reference itself OR its children
             if (_reference.id == _id) return _reference;
             for (var j in _reference.children) {
                 var obj2 = N.find(_id, _reference.children[j]);
@@ -1186,39 +1186,33 @@ N = {
             }
             return -1;
         } else {
-            //initial call, start in mainNode
+            //CASE: no valid _reference
+            //initial call, start search in mainNode then propogate down
             for (var k in mainNode) {
                 var _array = N.arrayD(k);
                 var obj3 = N.find(_id, _array);
                 if (obj3 != -1) return obj3;
             }
         }
+        //CASE: nothing found within given params
         return -1;
     },
     /**
      * Saves mainNode and STATUS to storage
      * @return NULL
+     * TODO: Consider replacing with just a global save function
      */
     saveAll: function () {
         storageSet();
     },
-    /**
-     * [loadCateg description]
-     * @param  {[type]} _name  [description]
-     * @param  {[type]} _obj   [description]
-     * @param  {[type]} _index [description]
-     * @return {[type]}        [description]
-     */
-    loadCateg: function (_name, _obj, _categ) {
-        mainNode[_categ] = { "name": "", "data": [] };
-        N.arrayN(_categ, _name);
-        for (var i in _obj) N.arrayD(_categ).push(N.create(_obj[i]));
+    //loads category given a name, dataset and index in main
+    //populates category with node objects while doing so
+    loadCateg: function (_name, _obj, _index) {
+        mainNode[_index] = { "name": "", "data": [] };
+        N.arrayN(_index, _name);
+        for (var i in _obj) N.arrayD(_index).push(N.create(_obj[i]));
     },
-    /**
-     * Uses loadCateg to load all three categories
-     * @param  Array _obj   Array of all three categories to load
-     * @return NULL
-     */
+    //Uses loadCateg to load all categories
     loadAll: function (_obj) {
         mainNode = [];
         for (var i in _obj) {
