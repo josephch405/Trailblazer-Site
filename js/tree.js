@@ -538,7 +538,6 @@ AddNew_Button = React.createClass({
     render: function() {
         return (
             <div id="add_card" className="inline card" onClick = {this.handleClick}>
-                <img src="../img/plus.png"/>
             </div>
         )
     }

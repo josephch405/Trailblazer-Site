@@ -123,13 +123,11 @@ div div,
 #add_card,
 #sub_add_card {
   box-shadow: 0 0 2px 0px;
-  background-color: #FFFFFF; }
-  #add_card img,
-  #sub_add_card img {
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 5%;
-    position: absolute; }
+  background-color: #FFFFFF;
+  background-image: url(../img/plus.png);
+  background-position: center;
+  background-size: 30vh 30vh;
+  background-repeat: no-repeat; }
 
 #bar_top {
   height: 8%;
@@ -578,17 +576,10 @@ div div,
 
 #tutorial_page {
   display: none;
-  background-color: white;
-  width: 100vw;
-  height: 100vh;
-  z-index: 100;
-  position: absolute;
+  /*background-color: white;
+  @include size(100vw, 100vh);
+  position: absolute;*/
   font-size: 3vh; }
-  #tutorial_page > div {
-    width: 80vw;
-    height: 80vh;
-    top: 10vh;
-    left: 10vw; }
   #tutorial_page h1,
   #tutorial_page h2 {
     font-family: Arvo;
@@ -602,6 +593,18 @@ div div,
     color: white; }
     #tutorial_page a:hover {
       background-color: #FFB533; }
+  #tutorial_page #tut_1 {
+    width: 100vw;
+    height: 100vh;
+    padding: 10vh 10vw 10vh 10vw;
+    background-color: #FFFFFF;
+    z-index: 100; }
+  #tutorial_page #tut_2 {
+    width: 100vw;
+    height: 100vh;
+    padding: 10vh 10vw 10vh 10vw;
+    background-color: #FFFFFF;
+    z-index: 99; }
   #tutorial_page #introSelection {
     position: static;
     height: 70%; }
@@ -611,14 +614,19 @@ div div,
       display: inline-block;
       width: 16vw; }
     #tutorial_page #introSelection li {
+      transition: all 0.2s ease-out;
       padding: 1vh;
       background-color: white;
       font-size: 3vh;
-      border: solid #AAAAAA;
-      border-width: 2px 2px 0 0;
-      display: none; }
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      border: none; }
     #tutorial_page #introSelection .expand li {
-      display: list-item; }
+      height: 5vh;
+      display: list-item;
+      border: solid #AAAAAA;
+      border-width: 2px 2px 0 0; }
       #tutorial_page #introSelection .expand li:hover {
         background-color: #EEEEEE; }
     #tutorial_page #introSelection .expand .selected {
@@ -629,7 +637,10 @@ div div,
       background-color: #FFA200 !important;
       color: white;
       font-size: 4vh;
-      display: list-item; }
+      display: list-item;
+      height: 5vh;
+      border: solid #AAAAAA;
+      border-width: 2px 2px 0 0; }
       #tutorial_page #introSelection li:first-child:hover {
         background-color: #FFB533 !important; }
     #tutorial_page #introSelection ul {
@@ -642,5 +653,83 @@ div div,
   #tutorial_page #tut_2 a {
     float: right;
     z-index: 100; }
+  #tutorial_page #tut_3 {
+    width: 100vw;
+    height: 0;
+    z-index: 98; }
+    #tutorial_page #tut_3 * {
+      position: absolute; }
+    #tutorial_page #tut_3 #tut_3_float_1 {
+      width: 30vw;
+      height: auto;
+      top: 10vh;
+      left: 10vw;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 .5vh 0 #000000;
+      padding: 3vh; }
+    #tutorial_page #tut_3 #tut_3_float_2 {
+      width: 25vw;
+      height: auto;
+      top: 10vh;
+      right: 2vw;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 .5vh 0 #000000;
+      padding: 3vh; }
+    #tutorial_page #tut_3 a {
+      right: 2vw;
+      top: 26vh;
+      box-shadow: 0 0 .5vh 0 #000000; }
+  #tutorial_page #tut_4 {
+    width: 100vw;
+    height: 0;
+    z-index: 97; }
+    #tutorial_page #tut_4 > div, #tutorial_page #tut_4 a {
+      position: absolute; }
+    #tutorial_page #tut_4 #tut_4_float_1 {
+      width: 20vw;
+      height: auto;
+      top: 50vh;
+      left: 30vw;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 .5vh 0 #000000;
+      padding: 3vh; }
+    #tutorial_page #tut_4 #tut_4_float_2 {
+      width: 20vw;
+      height: auto;
+      top: 30vh;
+      left: 2vw;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 .5vh 0 #000000;
+      padding: 3vh; }
+    #tutorial_page #tut_4 a {
+      right: 40vw;
+      top: 50vh;
+      box-shadow: 0 0 .5vh 0 #000000; }
+  #tutorial_page #tut_5 {
+    width: 100vw;
+    height: 0;
+    z-index: 98; }
+    #tutorial_page #tut_5 * {
+      position: absolute; }
+    #tutorial_page #tut_5 #tut_5_float_1 {
+      width: 50vw;
+      height: auto;
+      top: 20vh;
+      left: 10vw;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 .5vh 0 #000000;
+      padding: 3vh; }
+    #tutorial_page #tut_5 #tut_5_float_2 {
+      width: 25vw;
+      height: auto;
+      top: 74vh;
+      right: 51vw;
+      background-color: #FFFFFF;
+      box-shadow: 0 0 .5vh 0 #000000;
+      padding: 3vh; }
+    #tutorial_page #tut_5 a {
+      left: 51vw;
+      top: 76vh;
+      box-shadow: 0 0 .5vh 0 #000000; }
 
 /*# sourceMappingURL=main.css.map */

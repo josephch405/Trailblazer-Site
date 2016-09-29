@@ -496,8 +496,8 @@ renderIntro2 = function () {
 introNext = function () {
     tutCurrentSlide++;
     if (tutCurrentSlide <= 5) {
-        $("#tut_" + (tutCurrentSlide - 1)).fadeOut(200, function () {
-            $("#tut_" + tutCurrentSlide).fadeIn(200);
+        $("#tut_" + tutCurrentSlide).fadeIn(0, function () {
+            $("#tut_" + (tutCurrentSlide - 1)).fadeOut(200);
         });
         switch (tutCurrentSlide) {
             case 2:
@@ -505,18 +505,10 @@ introNext = function () {
                 break;
             case 3:
                 pushIntroCategsToMain();
+                renderAfterIntro();
         }
     } else {
-        if (mainNode.length == 0) {
-            mainNode.push({
-                name: "Group 1",
-                data: []
-            });
-        };
         $("#tutorial_page").fadeOut(200);
-        N.saveAll();
-        N.render();
-        setTimeout(N.push(), 200);
     }
 };
 
@@ -544,6 +536,20 @@ pushIntroCategsToMain = function () {
             }
         }
     }
+};
+
+renderAfterIntro = function () {
+    if (mainNode.length == 0) {
+        mainNode.push({
+            name: "Group 1",
+            data: []
+        });
+    };
+    N.saveAll();
+    N.render();
+    S.render();
+    setTimeout(N.push(), 200);
+    setTimeout(S.push(), 200);
 };
 
 IntroCategPage = React.createClass({
@@ -1630,11 +1636,7 @@ AddNew_Button = React.createClass({
         N.push();
     },
     render: function () {
-        return React.createElement(
-            "div",
-            { id: "add_card", className: "inline card", onClick: this.handleClick },
-            React.createElement("img", { src: "../img/plus.png" })
-        );
+        return React.createElement("div", { id: "add_card", className: "inline card", onClick: this.handleClick });
     }
 });
 

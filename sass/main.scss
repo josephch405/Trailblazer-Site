@@ -152,12 +152,10 @@ div div,
 #sub_add_card {
     box-shadow: 0 0 2px 0px;
     background-color: #FFFFFF;
-    img {
-        width: 80%;
-        margin-left: 10%;
-        margin-top: 5%;
-        position: absolute;
-    }
+    background-image: url(../img/plus.png);
+    background-position: center;
+    background-size: 30vh 30vh;
+    background-repeat: no-repeat;
 }
 
 #bar_top {
@@ -285,9 +283,9 @@ div div,
     padding: 2%;
     border: none;
     outline: none;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     color: #000000;
-    &:hover{
+    &:hover {
         background-color: #F0F0F0;
     }
 }
@@ -705,16 +703,10 @@ div div,
 
 #tutorial_page {
     display: none;
-    background-color: white;
+    /*background-color: white;
     @include size(100vw, 100vh);
-    z-index: 100;
-    position: absolute;
+    position: absolute;*/
     font-size: 3vh;
-    > div {
-        @include size(80vw, 80vh);
-        top: 10vh;
-        left: 10vw;
-    }
     h1,
     h2 {
         font-family: Arvo;
@@ -732,6 +724,18 @@ div div,
             background-color: #FFB533;
         }
     }
+    #tut_1 {
+        @include size(100vw, 100vh);
+        padding: 10vh 10vw 10vh 10vw;
+        background-color: #FFFFFF;
+        z-index: 100;
+    }
+    #tut_2 {
+        @include size(100vw, 100vh);
+        padding: 10vh 10vw 10vh 10vw;
+        background-color: #FFFFFF;
+        z-index: 99;
+    }
     #introSelection {
         #introCategPage {
             width: 74vw;
@@ -743,16 +747,21 @@ div div,
             width: 16vw;
         }
         li {
+            transition: all 0.2s ease-out;
             padding: 1vh;
             background-color: white;
             font-size: 3vh;
-            border: solid #AAAAAA;
-            border-width: 2px 2px 0 0;
-            display: none;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            border: none;
         }
         .expand {
             li {
+                height: 5vh;
                 display: list-item;
+                border: solid #AAAAAA;
+                border-width: 2px 2px 0 0;
                 &:hover {
                     background-color: #EEEEEE;
                 }
@@ -769,6 +778,9 @@ div div,
             color: white;
             font-size: 4vh;
             display: list-item;
+            height: 5vh;
+            border: solid #AAAAAA;
+            border-width: 2px 2px 0 0;
             &:hover {
                 background-color: #FFB533 !important;
             }
@@ -785,5 +797,89 @@ div div,
     #tut_2 a {
         float: right;
         z-index: 100;
+    }
+    #tut_3 {
+        @include size(100vw, 0);
+        z-index: 98;
+        * {
+            position: absolute;
+        }
+        #tut_3_float_1 {
+            @include size(30vw, auto);
+            top: 10vh;
+            left: 10vw;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 .5vh 0 #000000;
+            padding: 3vh;
+        }
+        #tut_3_float_2 {
+            @include size(25vw, auto);
+            top: 10vh;
+            right: 2vw;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 .5vh 0 #000000;
+            padding: 3vh;
+        }
+        a {
+            right: 2vw;
+            top: 26vh;
+            box-shadow: 0 0 .5vh 0 #000000;
+        }
+    }
+    #tut_4 {
+        @include size(100vw, 0);
+        z-index: 97;
+        > div, a {
+            position: absolute;
+        }
+        #tut_4_float_1 {
+            @include size(20vw, auto);
+            top: 50vh;
+            left: 30vw;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 .5vh 0 #000000;
+            padding: 3vh;
+        }
+        #tut_4_float_2 {
+            @include size(20vw, auto);
+            top: 30vh;
+            left: 2vw;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 .5vh 0 #000000;
+            padding: 3vh;
+        }
+        a {
+            right: 40vw;
+            top: 50vh;
+            box-shadow: 0 0 .5vh 0 #000000;
+        }
+    }
+    #tut_5 {
+        @include size(100vw, 0);
+        z-index: 98;
+        * {
+            position: absolute;
+        }
+        #tut_5_float_1 {
+            @include size(50vw, auto);
+            top: 20vh;
+            left: 10vw;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 .5vh 0 #000000;
+            padding: 3vh;
+        }
+        #tut_5_float_2 {
+            @include size(25vw, auto);
+            top: 74vh;
+            right: 51vw;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 .5vh 0 #000000;
+            padding: 3vh;
+        }
+        a {
+            left: 51vw;
+            top: 76vh;
+            box-shadow: 0 0 .5vh 0 #000000;
+        }
     }
 }
