@@ -1,4 +1,4 @@
-@import 'fonts';
+@import '_fonts';
 @mixin pos($t: null, $b:null, $l: null, $r: null) {
     top: $t;
     bottom: $b;
