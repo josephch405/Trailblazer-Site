@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family: openSans;
+    font-family: Open Sans;
     src: url(OpenSans-Regular.ttf);
 }
 
@@ -12,6 +12,7 @@
     font-family: roboto;
     src: url(Roboto-Regular.ttf);
 }
+
 
 @mixin pos($t: null, $b:null, $l: null, $r: null) {
     top: $t;
