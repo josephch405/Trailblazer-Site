@@ -1,4 +1,18 @@
-@import '_fonts';
+@font-face {
+    font-family: aller;
+    src: url(Aller_Rg.ttf);
+}
+
+@font-face {
+    font-family: openSans;
+    src: url(OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(Roboto-Regular.ttf);
+}
+
 @mixin pos($t: null, $b:null, $l: null, $r: null) {
     top: $t;
     bottom: $b;
